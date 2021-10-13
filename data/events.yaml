@@ -1,0 +1,579 @@
+defaultSpeaker: 'Alexander Trost ([@galexrt](https://twitter.com/galexrt)), DevOps Engineer and Rook Maintainer at [Cloudical Deutschland GmbH](https://cloudical.io)'
+defaultVisGroupID: 0
+visGroups:
+  # Well could be worse, right?
+  Misc:
+    id: 0
+    content: Misc
+    style: "color: #3f3f3f; background-color: #c0c0c0;"
+  Meetup:
+    id: 1
+    content: Meetup
+    style: "color: #2c2c2c; background-color: #d3d3d3;"
+  Conference:
+    id: 2
+    content: Conference
+    style: "color: #0a0a0a; background-color: #f5f5f5;"
+events:
+# 2020
+- name: KubeCon + CloudNativeCon North America 2020
+  homepage: https://www.containerdays.io/
+  beginDate: 2020-11-17 00:00:00
+  endDate: 2019-11-20 23:59:59
+  location: Boston, United States
+  status: Pending
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  description: |
+    The Cloud Native Computing Foundation’s flagship conference gathers adopters and technologists from leading open source and cloud native communities in Boston, Massachusetts from November 17 – 20, 2020. Join Kubernetes, Prometheus, Envoy, CoreDNS, containerd, Fluentd, TUF, Jaeger, Vitess, OpenTracing, gRPC, CNI, Notary, NATS, Linkerd, Helm, Rook, Harbor, etcd, Open Policy Agent, CRI-O, TiKV, CloudEvents and Falco as the community gathers for four days to further the education and advancement of cloud native computing.
+  #banner: /post/covers/containerdays-2020-hamburg.png
+- name: ContainerDays 2020
+  homepage: https://www.containerdays.io/
+  beginDate: 2020-06-22 00:00:00
+  endDate: 2019-06-24 23:59:59
+  location: Hamburg, Germany
+  status: Pending
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  description: |
+    ContainerDays 2020 is ready to start! From June 22-24, the international container community will gather again at the Harbor Museum in Hamburg to discuss the past, present, and future of cloud native technologies.
+
+    Just like all the previous years, ContainerDays will be loaded with exciting high-level talks and hands-on workshops with the focus on #Microservices, #DistributedApps, #Kubernetes #CloudNative, #CICD and #DevOps. This is your chance to meet like-minded container enthusiasts: 
+  banner: /post/covers/containerdays-2020-hamburg.png
+- name: Gulaschprogrammiernacht 2020
+  homepage: https://www.hfg-karlsruhe.de/en/aktuelles/gulaschprogrammiernacht-2020/
+  beginDate: 2020-05-21 00:00:00
+  endDate: 2019-05-24 23:59:59
+  location: ZKM, Karlsruhe, Germany
+  status: Going
+  type: Congress
+  #blogPost:
+  #slidesURL:
+  description: |
+    (Photo Laura Kluge)
+
+    Die GPN ist ein vom Entropia e. V. – Chaos Computer Club (CCC) veranstalteter Kongress, der sich als eine Hackveranstaltung mit dem Fokus auf Programmieren, Basteln und kreatives Schaffen versteht. Während die KonferenzteilnehmerInnen an ihren Projekten arbeiten und Ideen austauschen, können sich interessierte Gäste in lockerer Atmosphäre über diese informieren und die Vorträge besuchen. Der Schwerpunkt liegt im Bereich IT/Technik, aber auch andere Themenbereichen wie Gesellschaft, Kunst oder Philosophie werden angesprochen. Der Name ist Programm: Es wird Gulasch in großen Mengen gereicht.
+
+    Mehr Informationen unter [entropia.de](https://entropia.de)
+  banner: /post/covers/gpn2020-hfg-karlsruhe.png
+- name: KubeCon Europe Amsterdam 2020
+  homepage: https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/
+  beginDate: 2020-03-30 00:00:00
+  endDate: 2019-04-02 23:59:59
+  location: RAI Amsterdam, Amsterdam, The Netherlands
+  status: Going
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/kubecon-eu-amsterdam-2020.png
+  talks: []
+    #- name: "Ancientt: Network testing tool"
+    #  #description: ""
+    #  format: Lightning talk
+    #  beginDate: 0000-00-00 00:00:00
+    #  endDate: 0000-00-00 00:00:00
+    #  status: Submitted
+    #  #slidesURL:
+- name: SUSECON 2020
+  homepage: https://www.susecon.com/
+  beginDate: 2020-03-23 00:00:00
+  endDate: 2020-03-27 23:59:59
+  location: Dublin, Ireland
+  status: Going
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/susecon-2020-ireland.png
+  talks:
+    - name: 'Ancientt - Automating Network Testings Tools'
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Rejected
+      format: Lecture / Talk
+      type: Lecture
+      description: |
+        Let's talk about the problems, application and network teams are facing in the world of being "agile" and "dynamic".
+        Besides talking about the company political and "philosophical" problems, we are going to look into how the open source project Ancientt can help by automating certain network testing tools.
+        With that we are going explain why Ancientt was created and looking into the future of Ancientt.
+        A (live) demonstration of Ancientt will be given, to show how easy it is to automatically run a network throughput test in a dynamic environment such as Kubernetes / OpenShift.
+
+        **Outline**:
+
+        * Problems with network nowadays
+        * Network team's dilemma
+        * What is Ancientt?
+        * How Ancientt can help
+        * Live Demo
+        * Future of Ancientt
+        * Questions?
+    - name: 'Rook - Get your hands full into Ceph'
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Accepted
+      format: Hands-On Lab / Workshop
+      description: |
+        In the hands-on lab we'll dive into the Rook Ceph components and architecture, and get to set up Rook Ceph cluster with ease in Kubernetes.
+        Besides diving into Rook Ceph, a few points generally around storage (e.g., which storage for which application) will be answered.
+
+        The end result should be that every attendant has a basic understanding of Rook, has created a Rook Ceph cluster and played around with it (example application).
+
+        The project homepage can be found here: https://rook.io/
+
+        **High Level Outline**:
+
+        * Getting to know the architecture of Rook, especially the Rook Ceph Operator.
+        * Setting up a Rook Ceph cluster in Kubernetes.
+        * Trying out the Kubernetes Native Integration through CustomResourceDefinitions.
+        * Deploying an example application that uses storage.
+- name: FOSDEM'20
+  homepage: https://fosdem.org/
+  beginDate: 2020-02-01 00:00:00
+  endDate: 2019-02-02 23:59:59
+  location: Brussels, Belgium
+  status: Going
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/fosdem20-banner-custom.png
+  talks:
+    - name: Rook Cloud Native Storage for Kubernetes
+      #description: ""
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Accepted
+      slidesURL: https://fosdem.org/2019/schedule/event/ceph_storage_with_rook/
+- name: GoDays 2020
+  homepage: https://www.godays.io/
+  beginDate: 2020-01-21 00:00:00
+  endDate: 2019-01-23 23:59:59
+  location: Berlin, Germany
+  status: Going
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/godays-berlin-2020.png
+  talks:
+    - name: Ancientt Network Testing Tool
+      format: Lightning Talk
+      description: |
+        Let’s talk about the problems, application and network teams are facing in the world of being "agile" and "dynamic". Besides talking about the company political and "philosophical" problems, we are going to look into how the open source project Ancientt can help by automating certain network testing tools. With that we are going explain why Ancientt was created and looking into the future of Ancientt. A (live) demonstration of Ancientt will be given, to show how easy it is to automatically run a network throughput test in a dynamic environment such as Kubernetes / OpenShift.
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Accepted
+      #slidesURL:
+# 2019
+- name: KubeCon + CloudNativeCon North America 2019
+  homepage: https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2019/
+  beginDate: 2019-11-18 00:00:00
+  endDate: 2019-11-21 23:59:59
+  location: San Diego, California
+  status: Going
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/kubecon-cloudnativecon-north-america-2019.png
+  talks: []
+- name: CLOUD 2019 Technology & Services Conference
+  homepage: https://www.cloudcomputing-conference.de/muenchen/
+  beginDate: 2019-09-26 08:00:00
+  endDate: 2019-09-26 17:00:00
+  location: Sheraton Arabellapark, München, Germany
+  status: 'Going'
+  type: Conference
+  banner: /post/covers/cloud-2019-technology-and-services-conference-munich.png
+  talks: []
+- name: storage2day 2019
+  homepage: https://www.storage2day.de/
+  beginDate: 2019-09-17 00:00:00
+  endDate: 2019-09-19 23:59:59
+  location: Heidelberg, Germany
+  status: '**NOT GOING**'
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/storage2day-2019.png
+  talks:
+    - name: Ceph storage with Rook
+      description: |
+        Im Talk wird es bei dem Ceph Teil um die eingeführten und noch kommenden Verbesserungen gehen womit die Dynamik von containerisierten Applikationen besser gehandhabt werden können.
+        Dannach geht es dann um Rook, womit der Fokus auf in Kubernetes laufende Applikationen fällt. Dabei wird gezeigt wie schnell man ein Ceph Cluster in Kubernetes starten kann, und den Ceph Storage für seine Container in Form von Block, Filesystem und Object Storage in Kubernetes zur Verfügung stellt.
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Rejected
+      format: Talk (40 Minutes)
+      #slidesURL:
+      coSpeaker:
+        - fullName: Kim-Norman Sahm
+          title: Principal Evangelist Cloud Technology
+          company: Cloudical
+          companyHomepage: https://cloudical.io/
+          bio: |
+            Kim-Norman Sahm ist Head of Cloud Technology und arbeitet als Executive DevOps Architect bei der Cloudical UG in Berlin. Zuvor war er als OpenStack Cloud Architect bei T-Systems (operational services GmbH) und der noris network AG unterwegs. Er ist Experte bezüglich der Technologien OpenStack, Ceph und Kubernetes (CKA).
+# TODO Next year?
+#    - name: Storage für kleine Budgets
+#      description: |
+#        Im Talk werde ich auf die verschiedenen Arten (Object, Block und Filesystem Storage) und Verwendungsfälle (Archivspeicher, dynamischer Speicher für VMs, Container, usw.) eingehen und dabei dann auch was beachtet werden sollte.
+#        Daraufhin folgend werde ich verschiedene Szenarien für Storage eingehen und dabei aber auch auf ein paar Zahlen von verschiedenen Providern / Hostern eingehen.
+#      beginDate: 0000-00-00 00:00:00
+#      endDate: 0000-00-00 00:00:00
+#      status: Not Submitted
+#      format: Talk (40 Minutes)
+- name: ownCloud Conference 2019
+  homepage: https://conference.owncloud.org/
+  beginDate: 2019-09-17 00:00:00
+  endDate: 2019-09-19 23:59:59
+  location: Nürnberg, Germany
+  status: '**NOT GOING**'
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/owncloud-conference-2019-nuernberg-germany.png
+  talks: []
+- name: GrillOps Conf 2019
+  homepage: https://grillops.io
+  beginDate: 2019-09-14 00:00:00
+  endDate: 2019-09-15 23:59:59
+  location: Wrocław, Poland
+  status: Going
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/grillopsconf-september-2019-wroclaw-poland.png
+  talks: []
+- name: 'Cloud Native and Kubernetes Karlsruhe August 2019'
+  homepage: https://www.meetup.com/Cloud-Native-and-Kubernetes-Karlsruhe/
+  beginDate: 2019-08-29 18:30:00
+  endDate: 2019-08-29 22:00:00
+  location: Karlsruhe, Germany
+  status: Attended
+  type: Meetup
+  banner: /post/covers/meetupcom-cloudnativeka.png
+  talks:
+    - name: Service Mesh introduction and experiences
+      speaker: '[Stephan Fudeus](https://twitter.com/der_sfu), 1und1'
+      format: Talk
+    - name: Traefik - The Cloud Native Edge Router
+      speaker: '[Manuel Zapf](https://twitter.com/mZapfDE), Containous'
+      format: Talk
+- name: KubeCon + CloudNativeCon China 2019
+  homepage: https://www.lfasiallc.com/events/kubecon-cloudnativecon-china-2019/
+  beginDate: 2019-06-24 00:00:00
+  endDate: 2019-06-26 23:59:59
+  location: Shanghai, China
+  status: "**NOT GOING**, I'll be at ContainerDays, Hamburg instead."
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/kubecon-cloudnativecon-china-2019.png
+  talks: []
+- name: ContainerDays 2019
+  homepage: https://containerdays.io
+  beginDate: 2019-06-24 00:00:00
+  endDate: 2019-06-26 23:59:59
+  location: Hamburg, Germany
+  status: Going
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/twitter-containerdays2019-DptzRLEXUAAPf3P_large.jpg
+  talks:
+    - name: Importance of IPv6 in a cloudy World
+      description: "Some words on why IPv6 is important in a cloud-native world, why you should look into and implement it now."
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Accepted
+      #slidesURL:
+    - name: The Community, You and "Ignorance"?
+      description: |
+        Open talk with the audience about situations in which communication can be improved from the community and you, yourself the developer.
+        Going into my personal most common experienced "interesting" situations with the community.
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Rejected
+      #slidesURL:
+    - name: Rook - Running storage in Kubernetes
+      description: 'Use Rook to have persistence in your Kubernetes clusters. You have probably heard about Rook in context with running Ceph in Kubernetes, but Rook is much more than just running Ceph. Rook is about persistence in general for your applications data in Kubernetes. With the latest release, v0.9, Rook now can also run Nexenta EdgeFS, Cassandra/Scylla and NFS server for you.'
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Rejected
+      #slidesURL:
+    - name: Rook - Orchestrated Ceph in Kubernetes
+      description: 'A general look at the types of storage for applications and using the Rook project to run Ceph storage in your Kubernetes cluster.'
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Backup-Talk
+      #slidesURL:
+- name: DevOpsCon Berlin 2019
+  homepage: https://devopsconference.de/
+  beginDate: 2019-06-11 00:00:00
+  endDate: 2019-06-14 23:59:59
+  location: Berlin, Germany
+  status: Going
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/twitter-devopscon2019berlin-DuELO6QWkAIJQtJ_large.jpg
+  talks:
+    - name: 'Kubernetes - What You Need To Know GitLab CI + Kubernetes'
+      description: "Showing off GitLab's Kubernetes cluster feature, GitLab Pull Request review and GitLab CI to deploy an example application to Kubernetes."
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Accepted
+      #slidesURL:
+    - name: 'Rook - Ceph in Kubernetes + Second Operations'
+      description: |
+        A general look at the types of storage for applications and using the Rook project to run Ceph storage in your Kubernetes cluster. Next to running Ceph we will take a look at the second day operations for storage in Kubernetes (backups, restore, etc).
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Rejected
+      #slidesURL:
+- name: KubeCon + CloudNativeCon Europe 2019
+  homepage: https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/
+  beginDate: 2019-05-20 00:00:00
+  endDate: 2019-05-23 23:59:59
+  location: Fira Gran Via, Barcelona, Spain
+  status: Going
+  type: Conference
+  banner: /post/covers/kubecon-cloudnativecon-europe-2019.png
+  talks:
+    - name: 'Importance of IPv6 in a cloudy World'
+      description: "Some words on why IPv6 is important in a cloud-native world, why you should look into and implement it now."
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Rejected
+      format: Lightning Talk
+      #slidesURL:
+    - name: 'Intro: Rook'
+      description: 'In this talk, we will be introducing the Rook project to attendees of all levels and experience. Rook is an open source cloud-native storage orchestrator for Kubernetes, providing the platform, framework, and support for a diverse set of storage solutions to natively integrate with cloud-native environments. Rook turns storage software into self-managing, self-scaling, and self-healing storage services. It does this by automating deployment, bootstrapping, configuration, provisioning, scaling, upgrading, migration, disaster recovery, monitoring, and resource management. We will explore the benefits and use cases of Rook, and we will also walk through the architecture that the project is built on. Rook was accepted as the first storage project hosted by the Cloud Native Computing Foundation in January 2018.'
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Accepted
+      format: Talk
+      coSpeaker:
+        - fullName: Travis Nielsen
+          company: Red Hat
+          companyHomepage: https://www.redhat.com/en
+          title: Senior Principal Software Engineer
+          bio: |
+            Travis Nielsen is a Senior Principal Software Engineer at Red Hat where he works on “the future of storage” as part of the Ceph distributed storage system team. Before joining Red Hat, Travis helped found the Rook project as a Principal Software Engineer at Quantum Corporation. Prior to Quantum, Travis was the storage platform tech lead at Symform, a P2P storage startup acquired by Quantum. Before joining the startup world, he was an engineering lead for the Windows Server group at Microsoft.
+- name: Cephalocon 2019
+  homepage: https://ceph.com/cephalocon/barcelona-2019/
+  beginDate: 2019-05-19 00:00:00
+  endDate: 2019-05-20 23:59:59
+  location: Fira Barcelona, Barcelona, Spain
+  status: Going
+  type: Conference
+  banner: /post/covers/cephalocon-2019.png
+  talks:
+    - name: 'Rook - Running Ceph using Kubernetes'
+      description: |
+        We are going to show how easy it is to use Rook to quickly provision a new Ceph cluster and do second day operations like updating it and using the RBD mirroring feature.
+
+        This talk will especially focus on the stabilization for the Rook Ceph part in the v0.9 release.
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Accepted
+      #slidesURL:
+- name: GUUG-Frühjahrsfachgespräch 2019
+  homepage: https://ffg.guug.de/
+  beginDate: 2019-04-09 00:00:00
+  endDate: 2019-04-12 23:59:59
+  location: Karlsruher Institut für Technologie (KIT), Germany
+  status: Going
+  type: Conference
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/guug-ffg-2019-kit.png
+  talks:
+    - name: 'Container und Kubernetes'
+      description: |
+        Von einem einzelnen Container starten, zu einer containerisierten "Microservice" Applikation in Kubernetes laufen lassen.
+        In diesem Tutorium beginnen wir am ersten Tag, bei dem Konzept "Container" um ein grundlegendes Verständnis darüber zu erlangen, warum Container so "heiß begehrt" sind.
+        Nachdem wir nun wissen, was Container sind, beginnen wir mit dem Hands-On Teil. Dafür werden wir dann als allererstes Docker installieren und unsere erste containerisierte Applikation (WordPress) zum laufen bringen. Dabei werden wir uns folgenden Fragen stellen:
+
+        - Wie kann ich meinen Container von außen erreichen?
+        - Wie gehe ich mit persistenten Daten in meinem Container um?
+        - Wie kann ich von meinem Webserver Container auf, e.g., die Datenbank zugreifen?
+        - Wie stelle ich sicher, dass mein Webserver nicht den kompletten Speicher des Servers nutzen kann?
+
+        Durch diese Fragen werden wir die Basics rund um Container aufgebaut haben und können uns nun der nächst logischen Frage stellen, wie man eigentlich einen solchen Container für seine eigene Applikation bauen kann.
+
+        Der zweite Tag wird ganz im Namen von Kubernetes sein, da jeder Teilnehmer jeweils einen eigenen Kubernetes Cluster aufsetzen wird (dabei wird das "Standard" Tool "kubeadm" genutzt)!
+        Während der Installation des Kubernetes Clusters gehen wir dabei auf die Architektur eines Kubernetes Clusters ein, um ein grundlegendes Verständnis darüber aufzubauen, wie so ein "Kubernetes funktioniert".
+        Dazu werden wir uns auch die "Basic" Objekte der Kubernetes API anschauen, um zu verstehen wie diese in der Cluster Architektur eine Rolle spielen und was diese für einen Nutzen haben.
+        Je nachdem ob es die Zeit noch hergibt, einen WordPress Blog auf dem erstellten Cluster zu installieren.
+        Über den Autor: Alexander Trost arbeitet als DevOps Engineer bei Cloudical und ist Certified Kubernetes
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Accepted
+      format: Tutorial
+      #slidesURL:
+- name: FOSDEM'19
+  homepage: https://fosdem.org/
+  beginDate: 2019-02-02 00:00:00
+  endDate: 2019-02-03 23:59:59
+  location: Brussels, Belgium
+  status: Going
+  type: Conference
+  blogPost: /post/2019/FOSDEM19-Brussels/
+  #slidesURL:
+  banner: /post/covers/fosdem19-banner-custom.png
+  talks:
+    - name: Ceph storage with Rook
+      description: |
+        The talk will show how simple it is to use Rook for Ceph storage on Kubernetes.
+        In addition to showing how simple it is to use the storage, the ease of adding and removing nodes will also be shown in a demo.
+
+        Target audience are people interested in Ceph and Kubernetes.
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Accepted
+      slidesURL: https://fosdem.org/2019/schedule/event/ceph_storage_with_rook/
+- name: Cloud Native Night
+  homepage: https://www.meetup.com/Cloud-Native-Night/events/256743668/
+  beginDate: 2019-01-23 00:00:00
+  endDate: 2019-01-23 23:59:59
+  location: Mainz, Germany
+  status: Going
+  type: Meetup
+  #blogPost:
+  #slidesURL:
+  banner: /post/covers/meetupcom-cloudnativenightmainz2019-600_467015318.png
+  talks:
+    - name: Distributed storage with Rook
+      description: |
+        Introduction to the Rook project (http://rook.io) that provides distributed storage for cloud native environments. We will learn about the project and have a demo showcasing the Rook Ceph operator. The talk will answer the questions of what is Rook and why one should consider using Rook. Additionally we will have a look at the Kubernetes native integration, possibly with a live demo.
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      status: Accepted
+      #slidesURL:
+# 2018
+- name: Ceph Day Berlin
+  homepage: https://ceph.com/cephdays/germany/
+  beginDate: 2018-11-12 00:00:00
+  endDate: 2018-11-12 23:59:59
+  location: Berlin, Germany
+  status: Attended
+  slidesURL: https://ceph.com/cephdays/ceph-day-berlin/
+  type: Conference
+  banner: /post/2018/Ceph-Day-Berlin-2018/IMG_20181112_091637.jpg
+  talks: []
+- name: 'Karlsruhe Golang Meetup #2'
+  homepage: https://www.meetup.com/Karlsruhe-Golang-Meetup/events/254170206/
+  beginDate: 2018-10-24 18:30:00
+  endDate: 2018-10-24 23:59:59
+  location: Karlsruhe, Germany
+  status: Attended
+  type: Meetup
+  banner: /post/covers/secure.meetupstatic.com-photos-event-4-6-6-5-highres_475698021.png
+  talks: []
+- name: 'Cloud Native and Kubernetes Karlsruhe September 2018'
+  homepage: https://www.meetup.com/Cloud-Native-and-Kubernetes-Karlsruhe/
+  beginDate: 2018-09-13 18:00:00
+  endDate: 2018-09-13 22:00:00
+  location: Karlsruhe, Germany
+  status: Attended
+  type: Meetup
+  banner: /post/covers/meetupcom-cloudnativeka.png
+  talks:
+    - name: Automating Kubernetes deployments with Helm and Gitlab CI
+      speaker: Peter Rossbach, bee42
+- name: 'Cloud Native and Kubernetes Karlsruhe - First meetup - August 2019'
+  homepage: https://www.meetup.com/Cloud-Native-and-Kubernetes-Karlsruhe/
+  beginDate: 2018-08-30 19:00:00
+  endDate: 2018-08-30 22:00:00
+  location: Karlsruhe, Germany
+  status: Attended
+  type: Meetup
+  banner: /post/covers/meetupcom-cloudnativeka.png
+  talks:
+    - name: Kubernetes architecture
+      speaker: Erkan Yanar ([@erkuleswastaken](https://twitter.com/erkuleswastaken))
+    - name: Distributed storage with Rook
+      description: Introduction to the Rook project (http://rook.io) that provides distributed storage for cloud native environments. We will learn about the project and have a demo showcasing the Rook Ceph operator. The talk will answer the questions of what is Rook and why one should consider using Rook. Additionally we will have a look at the Kubernetes native integration.
+      status: Accepted
+- name: KubeCon Europe
+  homepage: https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/
+  beginDate: 2018-04-02 00:00:00
+  endDate: 2018-04-04 23:59:59
+  location: Copenhagen, Denmark
+  blogPost:
+  status: Attended
+  #slidesURL:
+  type: Conference
+  banner: /post/2018/KubeCon-Copenhagen-2018-Day-1/IMG_20180502_091220.jpg
+  talks:
+    - name: Rook Deep Dive
+      description: "Deep Dive into the Rook project."
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      coSpeaker:
+        - fullName: Travis Nielsen
+        - fullName: Jared Watts
+        - fullName: Tony Allen
+- name: '1st Golang Meetup Karlsruhe'
+  homepage: https://www.meetup.com/Karlsruhe-Golang-Meetup/events/251438616/
+  beginDate: 2018-06-26 18:30:00
+  endDate: 2018-06-26 23:59:59
+  location: Karlsruhe, Germany
+  status: Attended
+  type: Meetup
+  banner: /post/covers/secure.meetupstatic.com-photos-event-7-8-8-0-highres_472350848.png
+  talks:
+    - name: Kubernetes - WYNTK - GitLab CI + Kubernetes
+      description: Alexander Trost will be talking about the most important things you need to know about how to deploy GitLab CI on Kubernetes.
+      beginDate: 2018-06-26 19:10:00
+      endDate: 2018-06-26 19:40:00
+- name: ContainerDays 2018
+  homepage: https://www.containerdays.io/
+  beginDate: 2018-06-20 00:00:00
+  endDate: 2018-06-21 23:59:59
+  location: Hamburg, Germany
+  status: Attended
+  slidesURL: https://www.youtube.com/watch?v=qnQqLrsxTMc&list=PLHhKcdBlprMcVSL5OmlzyUrFtc7ib1V4w
+  type: Conference
+  banner: /post/2018/Container-Days-2018-Hamburg/IMG_20180619_091209.jpg
+  talks:
+    - name: Distributed storage with Rook
+      description: "Presentation and demo of running Ceph with Rook in Kubernetes."
+      slidesURL: https://www.youtube.com/watch?v=g53z3_SnKIw
+      beginDate: 0000-00-00 00:00:00
+      endDate: 0000-00-00 00:00:00
+      coSpeaker:
+        - fullName: Kim-Norman Sahm
+          title: Principal Evangelist Cloud Technology
+          company: "Cloudical"
+          companyHomepage: https://cloudical.io/
+- name: Ceph Day Germany
+  homepage: https://ceph.com/cephdays/germany/
+  beginDate: 2018-02-07 00:00:00
+  endDate: 2018-02-07 23:59:59
+  location: Darmstadt, Germany
+  status: Attended
+  slidesURL: https://ceph.com/cephdays/germany/
+  type: Conference
+  banner: /post/2018/Ceph-Day-Germany-2018/IMG_20180207_091357.jpg
+  talks: []
+# 2017
+- name: KubeCon North America
+  homepage: https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/
+  beginDate: 2017-12-06 00:00:00
+  endDate: 2017-12-08 23:59:59
+  location: Austin, Texas
+  status: Attended
+  type: Conference
+  banner: /post/2017/KubeCon-2017-Austin/IMG_20171206_092513.jpg
+  #slidesURL:
+  talks: []
+- name: ContainerDays 2017
+  homepage: https://www.containerdays.io/
+  beginDate: 2017-06-20 00:00:00
+  endDate: 2017-06-21 23:59:59
+  location: Hamburg, Germany
+  status: Attended
+  type: Conference
+  #slidesURL:
+  banner: /post/2017/Container-Days-2017-Hamburg/cds2017-photo1.png
+  talks: []

@@ -1,0 +1,129 @@
+{{ define "main" }}
+    {{ partial "header.html" . }}
+    {{ $nowYear := now.Format "2006" }}
+    <section class="main post-detail">
+        <header class="post-header">
+            <h1 class="post-title">{{ .Title }}</h1>
+            <p class="post-meta">
+                Author {{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }} · Updated {{ .Lastmod.Format "Mon Jan 2 15:04:05 2006" }}
+            </p>
+        </header>
+        <article class="post-content">
+            <p>
+                For events from <code>>= {{ $nowYear }}</code> year, goto the <a href="{{ ref . "/events/_index.md" }}">Events</a>.
+            </p>
+            <script src="{{ "js/vis.min.js" | absURL }}"></script>
+            <link href="{{ "css/vis.min.css" | absURL }}" rel="stylesheet" type="text/css" />
+            <div id="visualization" class="fullwidthdiv"></div>
+            <script type="text/javascript">
+                // DOM element for the Timeline
+                var container = document.getElementById('visualization');
+                // DataSet creation
+                var items = new vis.DataSet([
+                    {{- $events := sort .Site.Data.events.events "beginDate" "desc" -}}
+                    {{- $count := 1 -}}
+                    {{- range $i, $v := $events -}}
+                        {{- $eventYear := $v.beginDate | dateFormat "2006" -}}
+                        {{- if ne $eventYear $nowYear -}}
+                            {{- $beginDate := $v.beginDate | dateFormat "2. Jan" -}}
+                            {{- $endDate := $v.endDate | dateFormat "2. Jan" -}}
+                            {{- $eventName := $beginDate -}}
+                            {{- if ne $beginDate $endDate -}}
+                                {{- $eventName = printf "%s to %s" $eventName $endDate -}}
+                            {{- end -}}
+                            {{- $eventName = printf "%s - %s" $eventName $v.name }}
+                            {
+                              type: "box",
+                              id: {{ $i }},
+                              group: {{ if isset $.Site.Data.events.visGroups $v.type -}}
+                                {{ (index $.Site.Data.events.visGroups $v.type).id }}
+                              {{- else -}}
+                                {{ $.Site.Data.events.defaultVisGroupID }}
+                              {{- end -}},
+                              title: '{{ $v.type }} - {{ $v.location }}',
+                              content: '<a href="#{{ anchorize $eventName }}">{{ $v.name }}</a>',
+                              start: '{{ $v.beginDate | dateFormat "2006-01-02" }}',
+                              end: '{{ $v.endDate | dateFormat "2006-01-02" }}',
+                            },
+                        {{ end -}}
+                    {{- end -}}
+                ]);
+                // Groups
+                var groups = [
+                  {{ range .Site.Data.events.visGroups -}}
+                  {
+                    id: {{ .id }},
+                    title: '{{ .content }}',
+                    content: '{{ .content }}',
+                    style: '{{ .style }}',
+                  },
+                  {{- end }}
+                ];
+                // Configuration for the Timeline
+                var options = {
+                  height: "500px",
+                  width: '100%',
+                  start: "2017-01-01",
+                  end: "{{ now.AddDate -1 0 0 | dateFormat "2006" }}-12-31",
+                  min: "2017-05-01",
+                  max: "{{ now.AddDate -1 0 0 | dateFormat "2006" }}-12-31",
+                  zoomMin: 2592000000,
+                  zoomMax: 31536000000,
+                };
+                // Create a Timeline
+                var timeline = new vis.Timeline(container, items, groups, options);
+            </script>
+            {{- $events := sort .Site.Data.events.events "beginDate" "desc" -}}
+            {{- $currentYear := "" -}}
+            {{- range $e := $events -}}
+                {{- $beginDate := $e.beginDate | dateFormat "2006" -}}
+                {{- if lt $beginDate $nowYear -}}
+                    {{- if ne $beginDate $currentYear -}}
+                    {{- $currentYear = $beginDate -}}
+                    <h1>{{ $beginDate }}</h1>
+                    {{- end -}}
+                    {{- partial "events/event_list_entry.html" (dict "e" $e "defaultSpeaker" .Site.Data.events.defaultSpeaker) -}}
+                {{- end -}}
+            {{- end -}}
+            <hr>
+            <p>
+                For events from <code>>= {{ $nowYear }}</code> year, goto the <a href="{{ ref . "/events/_index.md" }}">Events</a>.
+            </p>
+            <br>
+        </article>
+        <footer class="post-footer">
+            {{ if isset .Params "tags" }}
+            <ul class="post-tags">
+              {{ range $tag := .Params.tags }}
+                <li><a href="/tags/{{ $tag | urlize }}"><span class="tag">{{ $tag | title }}</span></a></li>
+              {{ end }}
+            </ul>
+            {{ end }}
+            <p class="post-copyright">
+              {{ if .Site.Copyright }}{{ .Site.Copyright }}{{ end }}{{ if gt (div (sub now.Unix .Lastmod.Unix) 86400) 100 }}{{ end }}
+            </p>
+          </footer>
+          {{ if eq (default true .Params.comments) true }}
+            {{ if .Site.Params.changyan }}
+            <div id="cyReward" role="cylabs" data-use="reward"></div>
+            <script src="//changyan.itc.cn/js/lib/jquery.js"></script>
+            <script src="//changyan.sohu.com/js/changyan.labs.https.js?appid={{ .Site.Params.changyanId }}"></script>
+            <div id="SOHUCS" sid="{{ .URL }}" ></div>
+            <script>
+            (function(){
+            var appid = '{{ .Site.Params.changyanId }}';
+            var conf = '{{ .Site.Params.changyanConf }}';
+            var width = window.innerWidth || document.documentElement.clientWidth;
+            if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+            {{ else if .Site.Params.Gitment }}{{ partial "gitment.html" . }}
+            {{ else if .Site.DisqusShortname }}{{ partial "disqus.html" . }}
+            {{ else }}{{ end }}
+          {{ end }}
+    </section>
+    {{ partial "footer.html" . }}
+{{ end }}
+
+{{ define "title" }}
+Events Archive | {{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}
+{{ end }}

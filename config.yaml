@@ -1,0 +1,123 @@
+baseURL: 'https://edenmal.moe/'
+languageCode: en-us
+title: Edenmal
+theme: hugo-nuo
+#markup: mmark
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+enableRobotsTXT: true
+canonifyurls: true
+enableGitInfo: true
+pygmentsCodefences: true
+pygmentsCodefencesGuessSyntax: true
+pygmentsStyle: dracula
+disablePathToLower: true
+# Disqus Username
+#disqusShortname: edenmal
+# Google Analytics UA number
+googleAnalytics: UA-74383279-1
+# Copyright of your posts
+copyright: >-
+  © This page/post is licensed under a Creative Commons
+  Attribution-NonCommercial 4.0 International License, please give source if you
+  wish to quote or reproduce.
+menu:
+  main:
+    - name: Home
+      weight: 10
+      identifier: home
+      url: /
+    - name: About
+      weight: 20
+      identifier: about
+      url: /about/
+    - name: Categories
+      weight: 30
+      identifier: categories
+      url: /categories/
+    - name: Tags
+      weight: 40
+      identifier: tags
+      url: /tags/
+    - name: Events
+      weight: 50
+      url: /events/
+    - name: Impressum
+      weight: 100
+      url: /site-notice/
+#    - name: Sysadmin Garden of Eden Docs
+#      weight: 100
+#      identifier: garden_docs
+#      url: 'https://docs.edenmal.moe/'
+# Add your own params here
+params:
+  author: Alexander Trost
+  avatar: images/avatar.png
+  seotitle: 'Edenmal - Sysadmin Garden of Eden'
+  subtitle: Sysadmin Garden of Eden
+  description: 'An alien? A disease? Nope, just a sysadmin on the internet.'
+  paginate: 8
+  icofont: true
+  noexternal: true
+  Utterances: "galexrt/edenmal.moe"
+  # Choose your social networks
+  email: galexrt@googlemail.com
+  github: galexrt
+  twitter: galexrt
+  linkedin: alexander-trost
+  xing: Alexander_Trost18
+  # weibo = "weibo_username"
+  # wechat= "images/qrcode.jpg" # Replace with your wechat qrcode image
+  # facebook = "facebook_username"
+  # google = "+AlexanderTrostGalexrt"
+  # instagram = "instagram_username"
+  # youtube = "youtube_username"
+  # vimeo = "vimeo_username"
+  # medium = "medium_username"
+  # quora = "quora_username"
+  # pinterest = "pinterest_username"
+  # dribbble = "dribbble_username"
+  # behance = "behance_username"
+  # jsfiddle = "jsfiddle_username"
+  # codepen = "codepen_username"
+  # zhihu = "zhihu_username"
+  # douban = "douban_username"
+  # bilibili = "bilibili_id_number"
+  # Changyan Comments (China Only)
+  rss: index.xml
+  # changyan
+  changyan: false
+  changyanId: ''
+  changyanConf: ''
+  # Google Webmaster
+  # https://www.google.com/webmasters/
+  # googleSiteVerification = ""
+
+  # Bing Webmaster
+  # https://www.bing.com/toolbox/webmaster/
+  # msValidate = "22596E34341DD1D17D6022C44647E587"
+
+  # Baidu Webmaster (China Only)
+  # https://zhanzhang.baidu.com/
+  # baiduSiteVerification = "MZ23SPxxfa"
+
+  # Sogou Webmaster (China Only)
+  # http://zhanzhang.sogou.com/
+  # sogouSiteVerification = "m2jktMQTZm"
+
+  # 360 Webmaster (China Only)
+  # http://zhanzhang.so.com/
+  # soSiteVerification = "b7ab3b4c2edbc856642004d1b8c27a91"
+
+  # Baidu Tongji (China Only)
+  # https://tongji.baidu.com/
+  # baiduTongji = "e21dc1e8a592188271b615159dc88af7"
+
+  # ICP Number (China Only)
+  # ICP = "苏ICP备16005986号-2"
+permalinks:
+  posts: '/:year/:title/'
+imaging:
+  quality: 95

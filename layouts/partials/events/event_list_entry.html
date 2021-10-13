@@ -1,0 +1,93 @@
+{{ $defaultSpeaker := .defaultSpeaker }}
+{{ $e := .e }}
+{{ $beginDate := $e.beginDate | dateFormat "2. Jan" }}
+{{ $endDate := $e.endDate | dateFormat "2. Jan" }}
+{{- $eventName := $beginDate -}}
+{{- if ne $beginDate $endDate -}}
+{{- $eventName = printf "%s to %s" $eventName $endDate -}}
+{{- end -}}
+{{- $eventName = printf "%s - %s" $eventName $e.name }}
+<h2 id="{{ anchorize $eventName }}">{{ $eventName }}</h2>
+{{ if $e.banner }}
+<figure>
+    <img style="max-width:100%;height:275px" src="{{ $e.banner }}" alt="{{ $eventName }} Banner/Logo">
+</figure>
+<br />
+{{ end }}
+{{ if $e.location }}
+<b>Location</b>: {{ $e.location }}
+<br />
+{{ end }}
+<b>Type</b>: {{ if $e.type }}{{ $e.type }}{{ else }}?{{ end }}
+<br />
+{{ if $e.homepage }}
+<b>Homepage</b>: <a href="{{ $e.homepage }}">{{ $e.homepage }}</a>
+<br />
+{{ end }}
+{{ if $e.description }}
+<b>Description</b>: {{ $e.description | markdownify }}
+<br />
+{{ end }}
+{{ if $e.blogPost }}
+<b>Post</b>: <a href="{{ .blogPost | absURL }}">{{ $e.blogPost | absURL }}</a><br>
+{{ end }}
+{{ if $e.slidesURL }}
+<b>Infos/Slides/Recordings</b>: <a href="{{ $e.slidesURL | absURL }}">{{ $e.slidesURL }}</a>
+<br />
+{{ end }}
+{{ if $e.status }}
+<b>Status</b>: {{ $e.status }}
+<br />
+{{ end }}
+{{ if $e.talks }}
+{{ range sort $e.talks "beginDate" "desc" }}
+<h3>{{ .name }}</h3>
+<br />
+{{ if .format }}
+<b>Format</b>: {{ .format }}
+<br />
+{{ end }}
+{{ if .slidesURL }}
+<b>Infos/Slides/Recordings</b>: <a href="{{ .slidesURL }}">{{ .slidesURL }}</a>
+<br />
+{{ end }}
+{{ if and .beginDate (ne .beginDate "0000-00-00 00:00:00") }}
+<b>Date</b>: {{ .beginDate | dateFormat "Jan 2 15:04:05" }} to {{ .endDate | dateFormat "Jan 2 15:04:05" }}
+<br />
+{{ end }}
+{{ if .status }}
+<b>Status</b>: {{ .status | markdownify }}
+<br />
+{{ end }}
+<b>Description</b>: {{ if .description }}{{ .description | markdownify }}{{ else }}N/A{{ end }}
+<br />
+<b>Speaker</b>: {{ if .speaker }}{{ .speaker | markdownify }}{{ else }}{{ $defaultSpeaker | markdownify }}{{ end }}
+<br />
+{{ if .coSpeaker }}
+<b>Co-Speaker</b>:
+<ul>
+    {{ range sort .coSpeaker "fullname" "desc" }}
+    <li>
+        <u>{{ .fullName }}</u>
+        {{ if or (.company) .bio }}
+        <ul>
+            {{ if .title }}
+            <li><b>Title</b>: <b>{{ .title }}</b></li>
+            {{ end }}
+            {{ if .company }}
+            <li><b>Company/Organistation</b>: <a href="{{ .companyHomepage }}">{{ .company }}</a></li>
+            {{ end }}
+            {{ if .bio }}
+            <li><b>Bio</b>: {{ .bio }}</li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+{{ end }}
+{{ else }}
+<b>Talks</b>:
+<i>No talk(s) submitted (yet).</i><br />
+{{ end }}
