@@ -18,8 +18,8 @@ The Privacy Policy / Datenschutz­erklärung can be found here: [Privacy Policy 
 
 <address>
 Alexander Trost<br />
-Kelterstr. 4/1<br />
-75196 Remchingen<br />
+Postfach 11<br />
+75196 Kämpfelbach<br />
 Germany
 </address>
 
@@ -27,7 +27,7 @@ Germany
 
 <address>
 Phone: +497232370228<br />
-E-mail: galexrt@googlemail.com</p>
+E-mail: galexrt@googlemail.com
 </address>
 
 ### Responsible for the content according to Sect. 55, paragraph 2 RStV
