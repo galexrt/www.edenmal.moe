@@ -26,7 +26,6 @@ Germany
 ### Contact
 
 <address>
-Phone: +497232370228<br />
 E-mail: galexrt@googlemail.com
 </address>
 
