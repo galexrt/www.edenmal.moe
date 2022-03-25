@@ -7,12 +7,11 @@ comments: true
 author: Alexander Trost
 date: "2017-07-31T19:32:15+02:00"
 tags:
+  - Presentations
   - Kubernetes
   - Container
   - GitLab
   - Continuous Delivery
-categories:
-  - Presentations
 cover: /post/2017/Kubernetes-WYNTK-GitLab-CI-Kubernetes-Presentation/Kubernetes-WYNTK-GitLab-CI-Kubernetes-Presentation.png
 ---
 

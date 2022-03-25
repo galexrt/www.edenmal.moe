@@ -7,8 +7,8 @@ comments: true
 author: Alexander Trost
 date: "2018-10-15T08:15:20+01:00"
 tags:
-  - Cross-Post
-categories:
+  - Cloud Native
+  - Cloud
   - Articles
 cover: /post/covers/cloudy-road-from-gratisography-com.jpg
 ---

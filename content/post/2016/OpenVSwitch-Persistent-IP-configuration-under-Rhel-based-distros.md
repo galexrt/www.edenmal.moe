@@ -2,9 +2,8 @@
 title: 'OpenVSwitch: Persistent IP configuration under Rhel based distros'
 date: "2016-08-11T18:22:22+02:00"
 tags:
-  - OpenVSwitch
-categories:
   - Networking
+  - OpenVSwitch
 description: 'Persisting the interface IP configuration for OpenVSwitch interfaces/devices under Rhel based distros.'
 author: Alexander Trost
 cover: /post/2016/OpenVSwitch-Persistent-IP-configuration-under-Rhel-based-distros/Post_Title_Image.png

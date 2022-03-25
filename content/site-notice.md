@@ -26,7 +26,7 @@ Germany
 ### Contact
 
 <address>
-E-mail: galexrt@googlemail.com
+E-mail: me@galexrt.moe
 </address>
 
 ### Responsible for the content according to Sect. 55, paragraph 2 RStV
@@ -76,7 +76,7 @@ Germany
 ### Kontakt
 
 <address>
-E-Mail: galexrt@googlemail.com
+E-Mail: me@galexrt.moe
 </address>
 
 ### Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV

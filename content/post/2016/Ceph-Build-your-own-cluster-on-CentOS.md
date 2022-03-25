@@ -1,8 +1,7 @@
 ---
 title: 'Ceph: Build your own cluster on CentOS'
-categories:
+tags:
   - Ceph
-tags: []
 date: "2016-07-29T09:29:00+02:00"
 description: 'Ceph is an object, a block and filesystem storage system.'
 author: Alexander Trost

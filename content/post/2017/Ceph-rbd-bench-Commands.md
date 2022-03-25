@@ -6,9 +6,8 @@ sitemap: true
 comments: true
 author: Alexander Trost
 date: "2017-08-05T23:53:35+02:00"
-categories:
-  - Ceph
 tags:
+  - Ceph
   - Benchmark
 cover: /post/covers/Ceph_Logo_Stacked_RGB_120411_fa.png
 ---

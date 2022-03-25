@@ -7,12 +7,11 @@ comments: true
 author: Alexander Trost
 date: "2017-06-20T11:23:08+02:00"
 tags:
+  - Conferences
   - ContainerDays
   - Container
   - Docker
   - Kubernetes
-categories:
-  - Conferences
 cover: /post/2017/Container-Days-2017-Hamburg/cds2017-photo1.png
 ---
 

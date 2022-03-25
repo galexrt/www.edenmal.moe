@@ -2,9 +2,8 @@
 title: 'OpenVSwitch: Multi-Host Overlay Network'
 date: "2016-08-09T09:25:51+02:00"
 tags:
-  - OpenVSwitch
-categories:
   - Networking
+  - OpenVSwitch
 description: 'Creating a mutli-host overlay network between two and more servers.'
 author: Alexander Trost
 cover: /post/2016/OpenVSwitch-Multi-Host-Overlay-Network/Post_Title_Image.png

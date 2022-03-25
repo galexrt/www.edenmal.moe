@@ -1,11 +1,11 @@
 ---
 title: 'SteamCMD: Not working on CephFS'
 date: "2016-07-26T18:30:53+02:00"
-categories:
-  - Ceph
 tags:
   - SteamCMD
   - Analysis
+  - Ceph
+  - CephFS
 description: 'A small and uncomplete analysis of why the SteamCMD is not working on CephFS.'
 toc: false
 author: Alexander Trost

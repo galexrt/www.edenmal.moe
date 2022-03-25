@@ -3,10 +3,9 @@ title: "Rook: New Winds in the v1.1 release"
 author: "Alexander Trost"
 description: "Cross post of an older post I published on The Cloud Report blog about the Rook v1.1 release."
 tags:
-  - "Rook"
-  - "Ceph"
-categories:
+  - Articles
   - Rook
+  - Ceph
 date: "2020-01-06T15:20:10+01:00"
 toc: false
 sitemap: true

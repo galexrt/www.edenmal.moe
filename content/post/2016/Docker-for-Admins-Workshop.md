@@ -1,10 +1,9 @@
 ---
 title: 'Docker for Admins - Workshop'
 tags:
+  - Workshop
   - Docker
   - 'Docker for Admins'
-categories:
-  - Workshop
 description: This post is deprecated! Please move on to the new version of this post.
 toc: true
 date: "2016-03-08T14:39:00+02:00"

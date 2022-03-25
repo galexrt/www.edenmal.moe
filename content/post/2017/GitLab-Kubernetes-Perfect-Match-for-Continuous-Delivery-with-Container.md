@@ -7,12 +7,10 @@ comments: true
 author: Alexander Trost
 date: "2017-07-04T17:08:36+02:00"
 tags:
-  - Continuous Delivery
   - GitLab
+  - Continuous Delivery
   - Kubernetes
   - Container
-categories:
-  - GitLab
 cover: /post/2017/GitLab-Kubernetes-Perfect-Match-for-Continuous-Delivery-with-Container/GitLab-Kubernetes-Perfect-Match-for-Continuous-Delivery-with-Container.png
 ---
 

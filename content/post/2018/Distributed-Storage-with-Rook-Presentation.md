@@ -7,11 +7,10 @@ comments: true
 author: Alexander Trost
 date: "2018-07-10T15:50:42+02:00"
 tags:
+  - Presentations
   - Kubernetes
   - KubeCon
   - Austin
-categories:
-  - Presentations
 cover: /post/covers/rook-io-logo-only.png
 ---
 

@@ -9,8 +9,6 @@ tags:
   - Computer
   - Workstation
   - Network
-categories:
-  - Real Life
 author: Alexander Trost
 description: "In this post I'm showing you my current gaming and home office setup."
 date: 2020-01-10T11:58:26+01:00

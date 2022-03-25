@@ -1,8 +1,7 @@
 ---
 title: 'Docker: Live restore option for containers'
 author: Alexander Trost
-tags: []
-categories:
+tags:
   - Docker
 description: 'New flag in Docker daemon runtime allows to keep containers running even when Docker daemon is stopped.'
 date: "2016-08-29T16:09:00+02:00"

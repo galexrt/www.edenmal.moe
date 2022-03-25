@@ -1,7 +1,8 @@
 ---
 title: 'PSA: Keep your computer clean!'
-categories:
+tags:
   - PSA
+  - Computer
 date: "2016-06-27T10:43:00+02:00"
 toc: false
 description: 'Keep your computer(s) clean for them to work even now when a hot summer is around the corner.'

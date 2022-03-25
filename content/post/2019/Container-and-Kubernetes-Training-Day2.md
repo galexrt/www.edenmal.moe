@@ -3,9 +3,8 @@ title: "Container and Kubernetes - Day #2"
 author: "Alexander Trost"
 description: 'Container und Kubernetes Training Material'
 cover: /post/covers/kubernetes-logo-with-bg.png
-categories:
-  - Workshop
 tags:
+  - Workshop
   - Docker
   - Kubernetes
   - Container
@@ -2000,6 +1999,6 @@ If you are reading this, you have made it to the end of day #2. Well done, sir o
 {{< figure src="here-is-a-cookie.png" width="300px" title="Here is a Cookie (from Memegen)" >}}
 
 I hope everyone had a good time during the training's first day and has taken new knowledge with them already.
-If you have any feedback about the training itself or the materials, please let me know in person or email me at [galexrt AT googlemail DOT com](mailto:galexrt@googlemail.com).
+If you have any feedback about the training itself or the materials, please let me know in person or email me at [me AT galexrt DOT moe](mailto:me@galexrt.moe).
 
 Have Fun!

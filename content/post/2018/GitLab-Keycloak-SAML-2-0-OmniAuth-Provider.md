@@ -7,10 +7,9 @@ comments: true
 author: Alexander Trost
 date: "2018-01-16T16:15:53+02:00"
 tags:
+  - GitLab
   - Keycloak
-  - GitLab
-categories:
-  - GitLab
+  - SAML2
 cover: /post/covers/gitlab-keycloak-logo.png
 ---
 

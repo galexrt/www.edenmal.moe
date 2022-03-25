@@ -1,11 +1,10 @@
 ---
 title: "Importance of IPv6 in a Cloudy World Presentation"
 tags:
+  - Presentations
   - IPv6
   - Network
   - ContainerDays
-categories:
-  - Presentations
 author: Alexander Trost
 description: "My 'Importance of IPv6 in a Cloudy World Presentation' slides which I held at the ContainerDays Hamburg 2019."
 date: 2019-06-28T12:50:19+02:00

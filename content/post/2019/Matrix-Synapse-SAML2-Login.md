@@ -1,11 +1,9 @@
 ---
 title: "Matrix Synapse SAML2 Login"
 tags:
-  - SSO
-  - SAML2
-  - Matrix Synapse
-categories:
   - Matrix
+  - Matrix Synapse
+  - SAML2
 author: Alexander Trost
 description: "Tutorial on how to use Keycloak with Matrix Synapse Homeserver for authentication of users."
 date: 2019-06-28T11:51:19+02:00

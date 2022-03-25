@@ -1,8 +1,6 @@
 ---
 title: In search of a Webhosting
 tags:
-  - Tips
-categories:
   - Webhosting
 description: Some points to look out for when looking for a cheap and good shared webhosting.
 toc: true

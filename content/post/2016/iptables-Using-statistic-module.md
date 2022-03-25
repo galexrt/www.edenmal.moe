@@ -1,9 +1,8 @@
 ---
 title: 'iptables: Using statistic module'
 date: "2016-09-14T15:50:49+02:00"
-categories:
-  - Networking
 tags:
+  - Networking
   - iptables
 description: 'This post will show some examples using the iptables statistic module random mode.'
 toc: true

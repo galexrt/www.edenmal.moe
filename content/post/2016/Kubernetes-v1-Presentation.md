@@ -1,9 +1,8 @@
 ---
 title: Kubernetes v1 Presentation
 tags:
-  - Kubernetes
-categories:
   - Presentations
+  - Kubernetes
 toc: false
 date: "2016-02-27T15:15:00+02:00"
 author: Alexander Trost

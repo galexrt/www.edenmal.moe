@@ -17,7 +17,7 @@ disablePathToLower: true
 # Disqus Username
 #disqusShortname: edenmal
 # Google Analytics UA number
-googleAnalytics: UA-74383279-1
+googleAnalytics: ''
 # Copyright of your posts
 copyright: >-
   © This page/post is licensed under a Creative Commons
@@ -33,10 +33,6 @@ menu:
       weight: 20
       identifier: about
       url: /about/
-    - name: Categories
-      weight: 30
-      identifier: categories
-      url: /categories/
     - name: Tags
       weight: 40
       identifier: tags
@@ -63,11 +59,12 @@ params:
   noexternal: true
   Utterances: "galexrt/edenmal.moe"
   # Choose your social networks
-  email: galexrt@googlemail.com
+  email: me@galexrt.moe
   github: galexrt
   twitter: galexrt
   linkedin: alexander-trost
   xing: Alexander_Trost18
+  homepage: "https://galexrt.moe/"
   # weibo = "weibo_username"
   # wechat= "images/qrcode.jpg" # Replace with your wechat qrcode image
   # facebook = "facebook_username"
@@ -121,3 +118,6 @@ permalinks:
   posts: '/:year/:title/'
 imaging:
   quality: 95
+disableKinds: [""]
+taxonomies:
+  tag: tags

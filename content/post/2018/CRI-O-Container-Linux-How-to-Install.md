@@ -6,11 +6,10 @@ comments: true
 author: Alexander Trost
 date: "2018-03-06T21:14:11+02:00"
 tags:
+  - Container
   - 'CRI-O'
   - Kubernetes
   - 'Container Linux'
-categories:
-  - Container
 cover: /post/covers/crio-container-linux-logos.png
 ---
 

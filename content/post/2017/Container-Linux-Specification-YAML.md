@@ -7,9 +7,8 @@ comments: true
 author: Alexander Trost
 date: "2017-07-01T16:14:21+02:00"
 tags:
-  - Container Linux
-categories:
   - Container
+  - Container Linux
 cover: /post/covers/Container_Linux_Logo.png
 ---
 

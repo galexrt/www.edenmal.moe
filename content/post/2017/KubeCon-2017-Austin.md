@@ -7,12 +7,11 @@ comments: true
 author: Alexander Trost
 date: "2017-12-05T12:09:28-05:00"
 tags:
+  - Conferences
   - KubeCon
   - Container
   - Docker
   - Kubernetes
-categories:
-  - Conferences
 cover: /post/2017/KubeCon-2017-Austin/IMG_20171206_092513.jpg
 ---
 <style>iframe{display: block; margin: auto;}</style>

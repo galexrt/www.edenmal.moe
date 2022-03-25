@@ -1,11 +1,10 @@
 ---
 title: 'Docker for Admins - Workshop v2'
 tags:
+  - Workshop
   - Docker
   - Kubernetes
   - 'Docker for Admins'
-categories:
-  - Workshop
 description: 'Improved version of the first "Docker for Admins"-Workshop. So to say the version 2.'
 author: Alexander Trost
 toc: true

@@ -9,8 +9,7 @@ tags:
   - Kubernetes
   - Operator
   - Golang
-categories:
-  - GitHub Projects
+  - Open Source
 cover: https://avatars1.githubusercontent.com/u/13629408?s=400&v=4
 description: 'Installation and examples for using my elasticsearch operator (GitHub galexrt/elasticsearch-operator).'
 ---

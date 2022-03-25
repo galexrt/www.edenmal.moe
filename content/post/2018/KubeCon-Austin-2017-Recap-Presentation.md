@@ -7,11 +7,10 @@ comments: true
 author: Alexander Trost
 date: "2018-04-04T08:30:12+02:00"
 tags:
+  - Presentations
   - Kubernetes
   - KubeCon
   - Austin
-categories:
-  - Presentations
 cover: https://avatars1.githubusercontent.com/u/13629408?s=400&v=4
 ---
 

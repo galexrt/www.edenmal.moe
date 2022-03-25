@@ -7,12 +7,11 @@ comments: true
 author: Alexander Trost
 date: "2018-06-19T08:45:06+02:00"
 tags:
+  - Conferences
   - ContainerDays
   - Container
   - Docker
   - Kubernetes
-categories:
-  - Conferences
 cover: /post/2018/Container-Days-2018-Hamburg/IMG_20180619_091209.jpg
 ---
 

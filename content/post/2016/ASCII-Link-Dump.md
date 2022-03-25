@@ -2,7 +2,6 @@
 title: ASCII Link Dump
 tags:
   - ASCII
-categories:
   - Link Dumps
 date: "2016-03-27T19:29:00+02:00"
 author: Alexander Trost

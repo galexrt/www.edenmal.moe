@@ -7,10 +7,9 @@ comments: true
 author: Alexander Trost
 date: "2018-02-07T06:20:53+02:00"
 tags:
+  - Conferences
   - Ceph
   - Storage
-categories:
-  - Conferences
 cover: /post/2018/Ceph-Day-Germany-2018/IMG_20180207_091357.jpg
 ---
 

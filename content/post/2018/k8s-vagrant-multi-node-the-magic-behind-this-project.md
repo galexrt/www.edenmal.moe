@@ -3,8 +3,6 @@ title: "k8s-vagrant-multi-node: The magic behind this project"
 tags:
   - Vagrant
   - Kubernetes
-categories:
-  - Kubernetes
 author: Alexander Trost
 description: "In this post I'm going to write about a project I started to speed up multi-node Kubernetes dev environments. I'm going to especially explain how to simple it can be to start VirtualBox VMs in parallel."
 date: 2018-06-07T13:12:27+02:00

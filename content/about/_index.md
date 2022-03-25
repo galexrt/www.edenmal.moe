@@ -10,13 +10,15 @@ pswp: true
 {{< figure src="/images/profile_picture-shot_side.jpg" width="100%" title="Alexander Trost - Profile shot" >}}
 </div>
 
-My name is Alexander Trost and this is my blog. I'm also known under my nickname "Galexrt" on the internet.
+My name is Alexander Trost aka Galexrt and this is my blog.
 
 I'm a sysadmin who loves automation, containerization, coding in Go, playing games and with new technologies.
 
-Working at [Cloudical](https://cloudical.io/) as a DevOps Engineer with specialization on Kubernetes and Containerization.
+Working at [Koor Technologies](https://koor.tech/) as a DevOps Engineer with specialization on Kubernetes and Containerization.
 
-If you want to contact me, you can either use one of the social network "buttons" in the bottom area of the left sidebar, or use good old [email](mailto:galexrt@googlemail.com) to reach me.
+If you want to contact me, you can either use one of the social network "buttons" in the bottom area of the left sidebar, or use good old [email](mailto:me@galexrt.moe) to reach me.
+
+Checkout my homepage at [galexrt.moe](https://galexrt.moe/).
 
 ## Published Articles
 
@@ -38,18 +40,6 @@ A list of topics that I'm writing about are:
 * Open Source Projects I find interesting
 * My GitHub Projects
 * And much more..
-
-***
-
-## Blogger Glossar
-
-From time to time I use specific words in combination with formatting to mark special points/passages in my posts.
-Here is a list of them:
-
-* **NOTE** - Is a regular note to the current point/passage.
-* **NOTE** - A different type of note, mostly me adding a little extra to a made point/passage.
-* **QUOTE** - For quoted text (with author, etc).
-* **WDWD** - "**W**hat **D**oes **W**hat **D**o"
 
 ***
 

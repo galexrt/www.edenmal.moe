@@ -1,6 +1,9 @@
 clean:
 	rm -rf public/
 
+serve:
+	hugo server
+
 generate:
 	hugo --minify
 

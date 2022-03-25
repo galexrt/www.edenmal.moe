@@ -3,12 +3,12 @@ title: "Ancientt - Automation for Network Testing Tools"
 description: "Let's see what Ancientt is and how Ancientt can help by automating certain network testing tools."
 author: "Alexander Trost"
 tags:
-- Network
-- Monitoring
-- OpenSource
-- Project
-categories:
-- Ancientt
+  - Articles
+  - Network
+  - Monitoring
+  - Open Source
+  - Project
+  - Ancientt
 date: 2019-10-12T13:10:52+02:00
 toc: true
 sitemap: true

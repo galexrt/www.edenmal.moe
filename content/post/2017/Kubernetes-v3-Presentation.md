@@ -1,9 +1,8 @@
 ---
 title: Kubernetes v3 Presentation
 tags:
-  - Kubernetes
-categories:
   - Presentations
+  - Kubernetes
 toc: false
 date: "2017-01-27T13:33:00+02:00"
 author: Alexander Trost

@@ -1,9 +1,8 @@
 ---
 title: Kubernetes v2 Presentation
 tags:
-  - Kubernetes
-categories:
   - Presentations
+  - Kubernetes
 toc: false
 date: "2016-09-12T11:35:00+02:00"
 author: Alexander Trost

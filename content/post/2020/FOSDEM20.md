@@ -3,9 +3,8 @@ title: "FOSDEM'20 Brussels"
 author: "Alexander Trost"
 description: "Some thoughts, notes, comments and pictures from the FOSDEM'20 in Brussels, Belgium."
 cover: '/post/2020/FOSDEM20/fosdem2020-brussels-cover-w1250px.png'
-categories:
-  - Conferences
 tags:
+  - Conferences
   - FOSDEM
   - Brussels
   - Ceph

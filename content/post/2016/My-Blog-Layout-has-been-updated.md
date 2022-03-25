@@ -1,7 +1,5 @@
 ---
 title: My Blog Layout has been updated
-categories:
-  - Uncategorized
 tags:
   - My Blog
 description: 'The design of my blog has been updated with Google Custom Search Engine and some other fixes.'

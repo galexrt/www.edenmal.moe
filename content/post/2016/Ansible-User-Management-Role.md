@@ -1,10 +1,9 @@
 ---
 title: Ansible User Management Role
 tags:
+  - GitHub Projects
   - User Management
   - Ansible
-categories:
-  - GitHub Projects
 author: Alexander Trost
 toc: false
 description: A simple to use Ansible user management role made by me.

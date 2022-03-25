@@ -7,10 +7,9 @@ comments: true
 author: Alexander Trost
 date: "2017-08-31T19:41:04+02:00"
 tags:
+  - Container
   - 'Container Linux'
   - 'Bare Metal'
-categories:
-  - Container
 cover: /post/covers/Container_Linux_Logo.png
 ---
 

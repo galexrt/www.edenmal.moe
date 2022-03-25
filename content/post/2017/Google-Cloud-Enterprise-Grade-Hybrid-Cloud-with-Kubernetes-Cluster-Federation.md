@@ -7,11 +7,10 @@ comments: true
 author: Alexander Trost
 date: "2017-06-29T09:14:45+02:00"
 tags:
+  - Container
   - Google Cloud
   - Event
   - Kubernetes
-categories:
-  - Container
 cover: /post/2017/Google-Cloud-Enterprise-Grade-Hybrid-Cloud-with-Kubernetes-Cluster-Federation/photo0.png
 ---
 

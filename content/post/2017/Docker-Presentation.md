@@ -1,9 +1,8 @@
 ---
 title: '(Old) Docker Presentation'
 tags:
-  - Docker
-categories:
   - Presentations
+  - Docker
 toc: false
 date: "2017-04-27T09:15:00+02:00"
 author: Alexander Trost

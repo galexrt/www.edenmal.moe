@@ -7,12 +7,10 @@ comments: true
 author: Alexander Trost
 date: "2018-06-17T12:35:42+02:00"
 tags:
-  - Continuous Delivery
   - GitLab
+  - Continuous Delivery
   - Kubernetes
   - Container
-categories:
-  - GitLab
 cover: /post/2018/GitLab-Kubernetes-Using-GitLab-CIs-Kubernetes-Cluster-feature/GitLab-Kubernetes-Using-GitLab-CIs-Kubernetes-Cluster-feature.png
 ---
 

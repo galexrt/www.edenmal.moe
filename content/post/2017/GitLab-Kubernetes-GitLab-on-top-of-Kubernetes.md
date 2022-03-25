@@ -11,8 +11,6 @@ tags:
   - GitLab
   - Kubernetes
   - Container
-categories:
-  - GitLab
 cover: /post/2017/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes.png
 ---
 

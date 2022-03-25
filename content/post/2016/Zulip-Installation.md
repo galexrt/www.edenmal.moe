@@ -2,9 +2,8 @@
 title: 'Zulip: Installation'
 date: "2016-09-14T09:23:42+02:00"
 description: "A tutorial that guides you through installing Zulip."
-categories:
-  - Zulip
 tags:
+  - Zulip
   - Installation
 cover: /post/2016/Zulip-Installation/zulip-icon-512x512.png
 ---

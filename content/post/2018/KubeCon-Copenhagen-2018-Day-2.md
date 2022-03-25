@@ -7,12 +7,11 @@ comments: true
 author: Alexander Trost
 date: "2018-05-03T08:30:27+02:00"
 tags:
+  - Conferences
   - KubeCon
   - Container
   - Docker
   - Kubernetes
-categories:
-  - Conferences
 cover: /post/2018/KubeCon-Copenhagen-2018-Day-2/IMG_20180503_090849.jpg
 ---
 

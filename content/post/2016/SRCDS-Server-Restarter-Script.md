@@ -3,7 +3,6 @@ title: SRCDS Server Restarter Script
 tags:
   - Perl
   - SRCDS Server
-categories:
   - Gamserver
 description: SRCDS Server Restarter Script - Automatically restarts freezed/crashed SRCDS servers. Using only a Perl script and a Cronjob.
 date: "2016-04-30T15:41:02+02:00"

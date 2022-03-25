@@ -8,8 +8,6 @@ tags:
   - Office
   - Setup
   - Computers
-categories:
-  - Real Life
 author: Alexander Trost
 description: "In this post I'm showing you my new gaming and home office setup."
 date: 2018-06-05T13:47:13+02:00

@@ -1,11 +1,10 @@
 ---
 title: "Sitrep Container and IPv6 Presentation"
 tags:
+  - Presentations
   - IPv6
   - Network
   - ContainerDays
-categories:
-  - Presentations
 author: Alexander Trost
 description: "My 'Sitrep Container and IPv6' slides which I held at an IPv6 meetup."
 date: 2019-09-25T20:23:04+02:00

@@ -3,9 +3,8 @@ title: "My Sysctl Parameters"
 author: "Author Name"
 description: 'These are the sysctl settings I deploy on most of my machines.'
 cover: /post/2019/My-sysctl-Parameters/cover.png
-categories:
-  - Linux
 tags:
+  - Linux
   - sysctl
   - Tuning
 date: 2019-02-18T08:15:20+01:00

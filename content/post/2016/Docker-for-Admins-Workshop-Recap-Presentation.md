@@ -1,11 +1,10 @@
 ---
 title: 'Docker for Admins Workshop Recap Presentation'
 tags:
+  - Presentations
   - Docker
   - Workshop
   - 'Docker for Admins'
-categories:
-  - Presentations
 description: 'Docker for Admins Workshop Recap in one small presentation.'
 author: Alexander Trost
 date: "2016-04-29T17:24:37+02:00"

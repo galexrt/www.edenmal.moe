@@ -7,9 +7,8 @@ comments: true
 author: Alexander Trost
 date: "2020-01-06T14:55:41+01:00"
 tags:
-  - ownCloud
-categories:
   - Articles
+  - ownCloud
 ---
 
 This a cross post of a post I wrote for the [ownCloud Blog](https://owncloud.org/news/), the original post can be found here: [Running ownCloud in Kubernetes With Rook Ceph Storage](https://owncloud.org/news/running-owncloud-in-kubernetes-with-rook-ceph-storage/).

@@ -5,10 +5,9 @@ sitemap: true
 comments: true
 author: Alexander Trost
 tags:
+  - Presentations
   - Golang
   - Microservices
-categories:
-  - Presentations
 date: "2017-11-05T12:15:46+02:00"
 description: 'A presentation about writing a Microservice in Golang. Talks about the basics, why Microservices? Why Golang?'
 cover: /post/covers/Go-Logo_LightBlue.png

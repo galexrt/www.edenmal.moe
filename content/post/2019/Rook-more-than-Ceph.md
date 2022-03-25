@@ -7,9 +7,9 @@ comments: true
 author: Alexander Trost
 date: "2019-01-07T08:13:53+01:00"
 tags:
-  - Cross-Post
-categories:
   - Articles
+  - Rook
+  - Ceph
 cover: /post/covers/ceph-rook-logos.png
 ---
 

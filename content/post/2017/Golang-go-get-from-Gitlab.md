@@ -6,9 +6,8 @@ comments: true
 author: Alexander Trost
 date: "2017-06-02T14:39:01+02:00"
 tags:
-  - GitLab
-categories:
   - Golang
+  - GitLab
 cover: /post/covers/Go-Logo_LightBlue.png
 ---
 

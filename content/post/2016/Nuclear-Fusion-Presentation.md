@@ -1,11 +1,8 @@
 ---
 title: Nuclear Fusion Presentation
 date: "2016-07-09T16:44:22+02:00"
-categories:
-  - Presentations
 tags:
-  - 'Nuclear Fusion'
-  - Physics
+  - Presentations
 author: Alexander Trost
 toc: false
 ---

@@ -11,8 +11,6 @@ tags:
   - GitLab
   - Kubernetes
   - Container
-categories:
-  - GitLab
 cover: /post/2017/GitLab-Kubernetes-Running-CI-Runners-in-Kubernetes/GitLab-Kubernetes-Running-CI-Runners-in-Kubernetes.png
 ---
 

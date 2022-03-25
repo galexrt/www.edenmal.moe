@@ -1,10 +1,9 @@
 ---
 title: Kubernetes Interactive Bootcamp
 date: "2016-09-13T15:31:45+02:00"
-categories:
-  - Kubernetes
 tags:
-  - Bootcamp
+  - Link Dumps
+  - Kubernetes
 description: 'The link to the Kubernetes interactive Bootcamp.'
 cover: https://avatars1.githubusercontent.com/u/13629408?s=400&v=4
 ---

@@ -2,9 +2,8 @@
 title: "Container and Kubernetes Training"
 author: "Alexander Trost"
 description: 'Container und Kubernetes Training Material'
-categories:
-  - Workshop
 tags:
+  - Workshop
   - Docker
   - Kubernetes
   - Container

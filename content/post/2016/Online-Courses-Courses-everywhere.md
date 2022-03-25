@@ -1,8 +1,6 @@
 ---
 title: 'Online Courses! Online Courses Everywhere!'
 tags:
-  - Online Courses
-categories:
   - Link Dumps
 toc: false
 date: "2016-03-02T21:50:00+02:00"
