@@ -16,7 +16,7 @@ coverwidth: 250px
 
 ## Welcome!
 
-Quick short introduction to myself, my name is Alexander Trost. I’m a sysadmin who loves automation, containerization, coding in Go, playing games but also with new technologies.
+Quick short introduction to myself, my name is Alexander Trost. I’m a sysadmin who loves automation, containers, coding in Go, playing games but also with new technologies.
 I'm currently working at Cloudical as a DevOps Engineer, helping companies move to the cloud and / or to container technologies (e.g., Docker, Kubernetes, etc).
 
 ## Goal of the Training
@@ -107,7 +107,7 @@ This diagram should make it clear, how namespaces can create "unlimited" separat
 {{< figure src="linux-cgroups-namespaces-systemd-hierachy.png" width="1200px" title="Linux cgroups namespaces hierachy - by Shmuel Csaba Otto Traian" >}}
 <i>This photo ([original](https://commons.wikimedia.org/wiki/File:Linux_kernel_unified_hierarchy_cgroups_and_systemd.svg)) is made by Shmuel Csaba Otto Traian, licensed under the [CC Attribution-Share Alike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/deed.en) license.</i>
 
-Docker and most other containerization utilities use namespaces to separate containers from each other. There are several other techniques for kernel namespace separation to further improve security.
+Docker and most other containers utilities use namespaces to separate containers from each other. There are several other techniques for kernel namespace separation to further improve security.
 
 A container uses the running Linux kernel of the host, that is why there are less resources used, because a container is just using the existing kernel processes and doesn't need to spawn processes like that like when using a virtual machine.
 

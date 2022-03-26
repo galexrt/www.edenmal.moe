@@ -56,7 +56,7 @@ CI should run multiple types of tests, smoke, integration, unit.
 As Kelsey Hightwoer wrote in a tweet, if you don't have CI for your application, Kubernetes is your smallest problem.
 
 A cloud native trail map is available at the CNCF sponsor showcase booth or online at [l.cncf.io](https://l.cncf.io).
-Your adventure though should first lead to containerization of your applications, because containerized CI is easier to do.
+Your adventure though should first lead to containers of your applications, because containerized CI is easier to do.
 
 {{< figure src="IMG_20180502_092644.jpg" width="800px" title="KubeCon - Keynote - Kelsey Hightower is showin of nocode repository" >}}
 

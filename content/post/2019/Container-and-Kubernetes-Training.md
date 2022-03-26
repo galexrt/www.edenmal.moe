@@ -20,7 +20,7 @@ aliases:
 
 ## Welcome!
 
-Quick short introduction to myself, my name is Alexander Trost. I’m a sysadmin who loves automation, containerization, coding in Go, playing games but also with new technologies.
+Quick short introduction to myself, my name is Alexander Trost. I’m a sysadmin who loves automation, containers, coding in Go, playing games but also with new technologies.
 I'm currently working at Cloudical as a DevOps Engineer, helping companies move to the cloud and / or to container technologies (e.g., Docker, Kubernetes, etc).
 
 ## Goal of the Training

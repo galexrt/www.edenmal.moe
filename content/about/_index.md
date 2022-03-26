@@ -6,19 +6,29 @@ comments: false
 pswp: true
 ---
 
-<div class="fullwidthimg">
-{{< figure src="/images/profile_picture-shot_side.jpg" width="100%" title="Alexander Trost - Profile shot" >}}
-</div>
+Hello, I'm Alexander Trost aka galexrt.
 
-My name is Alexander Trost aka Galexrt and this is my blog.
+I'm working at [Koor Technologies](https://koor.tech/) as a Founding Engineer. I am specialized in the areas of containers, Kubernetes and Rook.
+I'm a sysadmin who uses containers, storage, automation, self-hosting, scripting, coding in Go, playing with new technologies and games.
 
-I'm a sysadmin who loves automation, containerization, coding in Go, playing games and with new technologies.
+If you want to contact me, you can use the social media links at the bottom of the left sidebar, or use good old [email](mailto:me@galexrt.moe) to reach me.
 
-Working at [Koor Technologies](https://koor.tech/) as a DevOps Engineer with specialization on Kubernetes and Containerization.
-
-If you want to contact me, you can either use one of the social network "buttons" in the bottom area of the left sidebar, or use good old [email](mailto:me@galexrt.moe) to reach me.
+{{< figure src="profile_picture.jpg" width="425px" title="Alexander Trost" >}}
 
 Checkout my homepage at [galexrt.moe](https://galexrt.moe/).
+
+## This blog
+
+This blog is about various topics.
+A list of topics that I'm writing about are:
+
+* Linux administration topics
+* Storage Technologies (like Ceph)
+* Containers (Docker and Kubernetes)
+* Open Source Projects I find interesting
+* My GitHub Projects
+* Automation
+* And much more..
 
 ## Published Articles
 
@@ -28,18 +38,6 @@ Checkout my homepage at [galexrt.moe](https://galexrt.moe/).
 * "Kubernetes: mit GitLab CI auf das Containerschiff" in [Entwickler Magazin Spezial Vol. 20: Kubernetes](https://entwickler.de/entwickler-magazin/entwickler-magazin-spezial-vol-20-kubernetes-579891257.html)
 * ["Rook: New Winds in the v1.1 release"](http://the-report.cloud/rook-new-winds-in-the-v1-1-release) in [The Cloud Report](http://the-report.cloud/)
 * ["FOSDEM’2020 Brussels"](http://the-report.cloud/fosdem2020-brussels) in [The Cloud Report](http://the-report.cloud/)
-
-## This blog
-
-This blog is about various topics.
-A list of topics that I'm writing about are:
-
-* Various Linux topics (error analysis, networking, etc)
-* Storage Technologies (like Ceph)
-* Containerization (Docker and Kubernetes)
-* Open Source Projects I find interesting
-* My GitHub Projects
-* And much more..
 
 ***
 

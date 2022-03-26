@@ -92,7 +92,7 @@ This diagram should make it clear, how namespaces can create "unlimited" separat
 <i>This photo ([original](https://commons.wikimedia.org/wiki/File:Linux_kernel_unified_hierarchy_cgroups_and_systemd.svg)) is made by Shmuel Csaba Otto Traian, licensed under the [CC Attribution-Share Alike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/deed.en) license.</i>
 </center>
 
-Docker and most other containerization utilities not only use namespaces to separate containers from each other. There are several other techniques, that further improve security.
+Docker and most other containers utilities not only use namespaces to separate containers from each other. There are several other techniques, that further improve security.
 
 A container uses the existing Linux kernel, there are less resources used, because a container just uses the existing kernel processes and doesn't need to spawn them like when using a virtual machine.
 
