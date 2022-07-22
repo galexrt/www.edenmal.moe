@@ -6,16 +6,17 @@ comments: false
 pswp: true
 ---
 
-Hello, I'm Alexander Trost aka galexrt.
+Hello, I'm Alexander aka galexrt.
 
-I'm working at [Koor Technologies](https://koor.tech/) as a Founding Engineer. I am specialized in the areas of containers, Kubernetes and Rook.
-I'm a sysadmin who uses containers, storage, automation, self-hosting, scripting, coding in Go, playing with new technologies and games.
+I'm the Founding Engineer of [Koor Technologies, Inc.](https://koor.tech/).
+I am specialized in containerization, Kubernetes and storage using Rook and Ceph.
 
-If you want to contact me, you can use the social media links at the bottom of the left sidebar, or use good old [email](mailto:me@galexrt.moe) to reach me.
+In my spare time, I am a system administrator and developer with a passion for gaming, self hosting and, most importantly open source.
+I'm also working on the German [Modern Gaming](https://modern-gaming.net/) Multi-Gaming community, with over 10k members, as an infrastructure administrator.
 
 {{< figure src="profile_picture.jpg" width="425px" title="Alexander Trost" >}}
 
-Checkout my homepage at [galexrt.moe](https://galexrt.moe/).
+Checkout my homepage over at [galexrt.moe](https://galexrt.moe/).
 
 ## This blog
 
@@ -30,7 +31,9 @@ A list of topics that I'm writing about are:
 * Automation
 * And much more..
 
-## Published Articles
+## Articles
+
+These are some articles which have been published on other blogs, or other mediums than a blog, feel free to check them out:
 
 * ["What exactly is 'Cloud Native' even?"](http://the-report.cloud/what-exactly-is-cloud-native-even) in [The Cloud Report](http://the-report.cloud/)
 * ["Rook"](http://the-report.cloud/rook) in [The Cloud Report](http://the-report.cloud/)
