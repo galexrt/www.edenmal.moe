@@ -1,0 +1,33 @@
+{
+  "author": "Alexander Trost <galexrt@googlemail.com>",
+  "bugs": {
+    "url": "https://github.com/galexrt/galexrt.github.io/issues"
+  },
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {
+      "autoprefixer": "project",
+      "postcss": "project",
+      "postcss-cli": "project"
+    }
+  },
+  "description": "Galexrt's personal site.",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0"
+  },
+  "homepage": "https://github.com/galexrt/galexrt.github.io#readme",
+  "license": "Apache-2.0",
+  "main": "none.js",
+  "name": "galexrt.github.io",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galexrt/galexrt.github.io.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.1"
+}
