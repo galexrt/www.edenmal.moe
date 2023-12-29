@@ -1,0 +1,199 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><title>GitLab + Kubernetes: GitLab on top of Kubernetes | Edenmal - Sysadmin Garden of Eden</title>
+<meta name=author content="Alexander Trost"><meta name=description content="How to run GitLab on top of a Kubernetes cluster with persitent storage."><meta name=twitter:site content="@galexrt"><meta name=twitter:title content="GitLab + Kubernetes: GitLab on top of Kubernetes | Edenmal - Sysadmin Garden of Eden"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://edenmal.moe/post/2017/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes.png"><meta name=twitter:description content="How to run GitLab on top of a Kubernetes cluster with persitent storage."><meta property="og:type" content="article"><meta property="og:title" content="GitLab + Kubernetes: GitLab on top of Kubernetes"><meta property="og:description" content="How to run GitLab on top of a Kubernetes cluster with persitent storage."><meta property="og:url" content="https://edenmal.moe/post/2017/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes/"><meta property="og:image" content="https://edenmal.moe/post/2017/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes.png"><meta name=generator content="Hugo 0.120.4"><link rel=canonical href=https://edenmal.moe/post/2017/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes/><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no,email=no,adress=no"><meta http-equiv=Cache-Control content="no-transform"><meta name=robots content="index,follow"><meta name=referrer content="origin-when-cross-origin"><meta name=theme-color content="#4d4ac7"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="black"><meta name=apple-mobile-web-app-title content="Edenmal"><meta name=msapplication-tooltip content="Edenmal"><meta name=msapplication-navbutton-color content="#4d4ac7"><meta name=msapplication-TileColor content="#4d4ac7"><meta name=msapplication-TileImage content="/icons/icon-144x144.png"><link rel=icon href=https://edenmal.moe/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://edenmal.moe/icons/icon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://edenmal.moe/icons/icon-32x32.png><link rel=icon sizes=192x192 href=https://edenmal.moe/icons/icon-192x192.png><link rel=apple-touch-icon href=https://edenmal.moe/icons/icon-152x152.png><link rel=manifest href=https://edenmal.moe/manifest.json><link rel=preload href=https://edenmal.moe/styles/main-rendered.min.css as=style><link rel=preload href=https://edenmal.moe/images/avatar.png as=image><link rel=preload href=https://edenmal.moe/images/grey-prism.svg as=image><style>body{background-color:#f4f3f1;background-image:url(/images/grey-prism.svg);background-repeat:repeat;background-attachment:fixed}</style><link rel=stylesheet href=https://edenmal.moe/styles/main-rendered.min.css><link rel=stylesheet href=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.min.css><link rel=stylesheet href=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.min.css><script src=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.min.819c76b4bba0f8b8c568f6e4860173f1d16e5046c01b008f4705ae823b5766e1.js integrity="sha256-gZx2tLug+LjFaPbkhgFz8dFuUEbAGwCPRwWugjtXZuE="></script><script src=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.min.2fcfc43be15566e9378af0e8247ba57fec8d4ee95c5dba15cf97e84d6c2115bc.js integrity="sha256-L8/EO+FVZuk3ivDoJHulf+yNTulcXboVz5foTWwhFbw="></script><script src=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.min.77ec5e7d7f844e9b6c2413a352b48194493a65c75d94d5cd9679a225c2da773c.js integrity="sha256-d+xefX+ETptsJBOjUrSBlEk6ZcddlNXNlnmiJcLadzw="></script><script src=https://edenmal.moe/scripts/pswp-init.min.299a530b67d8be41667aa9ed78920e272e970b0ac8ab7540ba3a7c1382b52de2.js integrity="sha256-KZpTC2fYvkFmeqnteJIOJy6XCwrIq3VAujp8E4K1LeI="></script></head><body><div class=suspension><a role=button aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class=icofont-caret-up aria-hidden=true></span></a>
+<a role=button aria-label="Print page" title="Print page" class=print-page onclick=window.print()><span class=icofont-print aria-hidden=true></span></a></div><header class=site-header><a class=avatara href=https://edenmal.moe/><img class=avatar src=https://edenmal.moe/images/avatar.png alt=Avatar></a><h2 class=title><a href=https://edenmal.moe/>Edenmal</a></h2><p class=subtitle>Sysadmin Garden of Eden</p><button class=menu-toggle type=button aria-label="Main Menu" aria-expanded=false tab-index=0>
+<span class=icofont-navigation-menu aria-hidden=true></span></button><nav class="site-menu collapsed"><h2 class=offscreen>Main Menu</h2><ul class=menu-list><li class="menu-item
+is-active"><a href=https://edenmal.moe/>Home</a></li><li class=menu-item><a href=https://edenmal.moe/about/>About</a></li><li class=menu-item><a href=https://edenmal.moe/tags/>Tags</a></li><li class=menu-item><a href=https://edenmal.moe/events/>Events</a></li><li class=menu-item><a href=https://edenmal.moe/site-notice/>Impressum</a></li></ul></nav><nav class="social-menu collapsed"><h2 class=offscreen>Social Networks</h2><ul class=social-list><li class=social-item><a href=mailto:me@galexrt.moe title=Email aria-label=Email><span class=icofont-envelope aria-hidden=true></span></a></li><li class=social-item><a href=https://galexrt.moe/ rel=me title=Homepage aria-label=Homepage><span class=icofont-page aria-hidden=true></span></a></li><li class=social-item><a href=//github.com/galexrt rel=me title=GitHub aria-label=GitHub><span class=icofont-github aria-hidden=true></span></a></li><li class=social-item><a href=//twitter.com/galexrt rel=me title=Twitter aria-label=Twitter><span class=icofont-twitter aria-hidden=true></span></a></li><li class=social-item><a href=//www.linkedin.com/in/alexander-trost rel=me title=LinkedIn aria-label=LinkedIn><span class=icofont-linkedin aria-hidden=true></span></a></li><li class=social-item><a href=//www.xing.com/profile/Alexander_Trost18 rel=me title=XING aria-label=XING><span class=icofont-xing aria-hidden=true></span></a></li><li class=social-item><a rel=alternate type=application/rss+xml href=https://edenmal.moe/index.xml title=RSS aria-label=RSS><span class=icofont-rss aria-hidden=true></span></a></li></ul></nav></header><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><section class="main post-detail"><header class=post-header><h1 class=post-title>GitLab + Kubernetes: GitLab on top of Kubernetes</h1><p class=post-meta>Author Alexander Trost · Read Time 6 minutes · Created Sat Nov 4 18:00:46 2017 · Updated Fri Mar 25 21:33:36 2022</p></header><article class=post-content><div class=fullwidthimg><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><a href=https://edenmal.moe/post/2017/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes.png itemprop=contentUrl><img itemprop=thumbnail src=https://edenmal.moe/post/2017/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes/GitLab-Kubernetes-GitLab-on-top-of-Kubernetes.png width=850px></a></figure></div><h2>Table of Contents</h2><nav id=TableOfContents><ul><li><a href=#intro>Intro</a><ul><li><a href=#decision-to-use-sameersbn-gitlab-image-instead-of-the-official>Decision to use <code>sameersbn</code> GitLab image instead of the official</a></li><li><a href=#requirements>Requirements</a></li><li><a href=#manifests>Manifests</a></li></ul></li><li><a href=#step-1---verify-kubernetes-cluster-connectivity>Step 1 - Verify Kubernetes cluster &ldquo;connectivity&rdquo;</a></li><li><a href=#step-2---write-kubernetes-manifests-for-gitlab>Step 2 - Write Kubernetes manifests for GitLab</a><ul><li><a href=#configmap>ConfigMap</a></li><li><a href=#secret>Secret</a></li><li><a href=#statefulset>StatefulSet</a></li><li><a href=#service>Service</a></li><li><a href=#ingress>Ingress</a></li></ul></li><li><a href=#step-3---create-the-manifests>Step 3 - Create the manifests</a></li><li><a href=#step-4---login-to-your-new-gitlab>Step 4 - Login to your new GitLab</a></li><li><a href=#summary>Summary</a></li></ul></nav><hr><h2 id=intro>Intro</h2><p>This is the third post in the three post series about Kubernetes and GitLab. The first post can be found here: <a href=https://edenmal.moe/post/2017/GitLab-Kubernetes-Perfect-Match-for-Continuous-Delivery-with-Container/>Edenmal - GitLab + Kubernetes: Perfect Match for Continuous Delivery with Container</a>.</p><p>This post will not cover how to setup a Postgres and Redis server/cluster for the GitLab.
+In the near future I may even publish all my current manifests, that also contain Postgres and Redis server/cluster manifests.</p><p>If you don&rsquo;t have a Postgres and Redis, I would recommend you to check out the Kubernetes manifests at <a href=https://github.com/sameersbn/docker-gitlab><code>sameersbn/docker-gitlab</code></a> repo, here: <a href=https://github.com/sameersbn/docker-gitlab/tree/master/kubernetes>https://github.com/sameersbn/docker-gitlab/tree/master/kubernetes</a> They contain a manifest for Postgres and Redis server.</p><h3 id=decision-to-use-sameersbn-gitlab-image-instead-of-the-official>Decision to use <code>sameersbn</code> GitLab image instead of the official</h3><p>The manifests below are using <a href=https://github.com/sameersbn/docker-gitlab><code>sameersbn/docker-gitlab</code></a> image. You may ask &ldquo;Why not use the official GitLab image?&rdquo;.
+A good question, the answer to that lies in the concept of configuration of GitLab inside the container.
+I personally prefer an image that doesn&rsquo;t need a persistent volume for the configuration.
+Only time I want to use a persistent volume, is when I have data from an application that needs to persistence.
+Last time I looked a the official GitLab Docker image I was required to have a persistent volume for the configuration.</p><p>That is not how I imagine an application in a container to be configured. I prefer:</p><ul><li>Configuration through environment variables</li><li><strong>ONE</strong> &ldquo;small&rdquo; configuration (fitting into a Kubernetes ConfigMap)</li><li>Configuration by flag</li></ul><p>Having to &ldquo;move&rdquo; around a persistent volume which contains the config is a bad thing from my point of view.
+That is the reason behind why I am using <a href=https://github.com/sameersbn/docker-gitlab><code>sameersbn/docker-gitlab</code></a> image instead of the official <a href=https://hub.docker.com/r/gitlab/gitlab-ce/><code>gitlab/gitlab-ce</code></a> image.
+Additionally there are some other smaller points, for example what runs in the container is more than should. At best one process per container.</p><h3 id=requirements>Requirements</h3><ul><li>Kubernetes cluster with Ingress support</li><li>Kubernetes Ingress Controller (example: <a href>nginx-ingress controller</a>)</li><li>StorageClass configured in Kubernetes<ul><li><code>ReadWriteMany</code> Persistent Storage (example CephFS using <a href=https://rook.io>Rook</a>)</li></ul></li><li>Domain/Subdomain ready to be used for the GitLab</li><li><code>kubectl</code> binary (with Kubernetes cluster access)</li><li>Postgres server for GitLab</li><li>Redis server/cluster for GitLab</li></ul><blockquote><p><strong>NOTE</strong></p><p>Postgres and Redis need to be reachable from inside the Kubernetes cluster.</p></blockquote><h3 id=manifests>Manifests</h3><p>The manifests shown in this blog post will also be available on GitHub here: <a href=https://github.com/galexrt/kubernetes-manifests>GitHub - galexrt/kubernetes-manifests</a>.
+If you want the latest manifests version, I recommend you checkout the repository (though I try to keep the blog post and repository in the same state/version).</p><h2 id=step-1---verify-kubernetes-cluster-connectivity>Step 1 - Verify Kubernetes cluster &ldquo;connectivity&rdquo;</h2><p>To check if you have proper Kubernetes cluster connection, run the following command:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-console data-lang=console><span style=display:flex><span>$ kubectl cluster-info
+</span></span><span style=display:flex><span><span style=color:#44475a>kubectl cluster-info
+</span></span></span><span style=display:flex><span><span style=color:#44475a>Kubernetes master is running at https://k8s.example.com:443
+</span></span></span><span style=display:flex><span><span style=color:#44475a>KubeDNS is running at https://k8s.example.com:443/api/v1/namespaces/kube-system/services/kube-dns/proxy
+</span></span></span><span style=display:flex><span><span style=color:#44475a>[...]
+</span></span></span><span style=display:flex><span><span style=color:#44475a>To further debug and diagnose cluster problems, use &#39;kubectl cluster-info dump&#39;.
+</span></span></span><span style=display:flex><span><span style=color:#44475a></span>$
+</span></span></code></pre></div><p>The <code>kubectl</code> command <code>cluster-info</code> shows you if you can connect to the cluster
+and list the available cluster services (in the ouput: Kubernetes apiserver and KubeDNS service).</p><h2 id=step-2---write-kubernetes-manifests-for-gitlab>Step 2 - Write Kubernetes manifests for GitLab</h2><p>As written in the <a href=#Intro>Intro</a>, the manifests will cover only the GitLab.</p><h3 id=configmap>ConfigMap</h3><p>The list of all available environment variables for the configuration, can be found here: <a href=https://github.com/sameersbn/docker-gitlab#available-configuration-parameters>sameersbn/docker-gitlab - Available Configuration Parameters</a>.
+If you have a variable that would contain a password or token, put it in the <a href=#Secret>Secret manifest</a> below.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ff79c6>apiVersion</span>: v1
+</span></span><span style=display:flex><span><span style=color:#ff79c6>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#6272a4># Timezone</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>TZ</span>: <span style=color:#f1fa8c>&#34;Europe/Berlin&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_TIMEZONE</span>: <span style=color:#f1fa8c>&#34;Berlin&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#6272a4># GitLab</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_ROOT_EMAIL</span>: <span style=color:#f1fa8c>&#34;admin@example.com&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_HOST</span>: <span style=color:#f1fa8c>&#34;gitlab.example.com&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_PORT</span>: <span style=color:#f1fa8c>&#34;443&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_SSH_HOST</span>: <span style=color:#f1fa8c>&#34;ssh.gitlab.example.com&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_SSH_PORT</span>: <span style=color:#f1fa8c>&#34;22&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_HTTPS</span>: <span style=color:#f1fa8c>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_NOTIFY_ON_BROKEN_BUILDS</span>: <span style=color:#f1fa8c>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_NOTIFY_PUSHER</span>: <span style=color:#f1fa8c>&#34;false&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_PIPELINE_SCHEDULE_WORKER_CRON</span>: <span style=color:#f1fa8c>&#34;*/5 * * * *&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#6272a4># GitLab Backup</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_BACKUP_SCHEDULE</span>: <span style=color:#f1fa8c>&#34;daily&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_BACKUP_TIME</span>: <span style=color:#f1fa8c>&#34;04:30&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#6272a4># GitLab DB</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>DB_ADAPTER</span>: <span style=color:#f1fa8c>&#34;postgresql&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>DB_HOST</span>: <span style=color:#f1fa8c>&#34;__YOUR_POSTGRES_ADDRESS__&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>DB_PORT</span>: <span style=color:#f1fa8c>&#34;5432&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>DB_USER</span>: <span style=color:#f1fa8c>&#34;gitlab&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>DB_NAME</span>: <span style=color:#f1fa8c>&#34;gitlab&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#6272a4># GitLab Redis</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>REDIS_HOST</span>: <span style=color:#f1fa8c>&#34;__YOUR_REDIS_ADDRESS__&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>REDIS_PORT</span>: <span style=color:#f1fa8c>&#34;6379&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#6272a4># Nginx settings</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>NGINX_MAX_UPLOAD_SIZE</span>: <span style=color:#f1fa8c>&#34;100m&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#6272a4># GitLab SMTP settings</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_EMAIL</span>: <span style=color:#f1fa8c>&#34;noreply@example.com&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_EMAIL_DISPLAY_NAME</span>: <span style=color:#f1fa8c>&#34;GitLab ZerBytes&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_EMAIL_REPLY_TO</span>: <span style=color:#f1fa8c>&#34;gitlab@example.com&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>SMTP_ENABLED</span>: <span style=color:#f1fa8c>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>SMTP_DOMAIN</span>: <span style=color:#f1fa8c>&#34;example.com&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>SMTP_HOST</span>: <span style=color:#f1fa8c>&#34;smtp.example.com&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>SMTP_PORT</span>: <span style=color:#f1fa8c>&#34;587&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>SMTP_USER</span>: <span style=color:#f1fa8c>&#34;gitlab&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>SMTP_STARTTLS</span>: <span style=color:#f1fa8c>&#34;true&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>SMTP_AUTHENTICATION</span>: <span style=color:#f1fa8c>&#34;login&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#6272a4># Your other config vars below</span>
+</span></span><span style=display:flex><span><span style=color:#ff79c6>kind</span>: ConfigMap
+</span></span><span style=display:flex><span><span style=color:#ff79c6>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>app</span>: gitlab
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>name</span>: gitlab-cm
+</span></span></code></pre></div><h3 id=secret>Secret</h3><p>The values for the <code>data</code> keys, need to be <code>base64</code> encoded.
+This can be done from the command line on most Linuxes using the <code>base64</code> command. Like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-console data-lang=console><span style=display:flex><span><span style=color:#44475a>echo -n &#34;YOUR_VALUE&#34; | base64 -w0
+</span></span></span></code></pre></div><p>(The <code>-w0</code> stops <code>base64</code> wrapping after specific length per line)</p><p>In the manifest below there are variables beginning with <code>__YOUR_...__</code>, you need to replace those.</p><ul><li><code>__YOUR_GITLAB_SECRETS_</code> variables should be replaced by <code>base64</code> encoded randomly generated strings.</li><li><code>__YOUR_DB_PASS__</code> should be replaced by <code>base64</code> encoded Postgres database server password.</li><li><code>__YOUR_SMTP_PASS__</code> should be replaced by <code>base64</code> encoded SMTP server password.</li><li><code>__YOUR_GITLAB_ROOT_PASSWORD__</code> should be replaced by <code>base64</code> encoded chosen first GitLab user <code>root</code> password of your choice.</li></ul><p>The manifest looks like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ff79c6>apiVersion</span>: v1
+</span></span><span style=display:flex><span><span style=color:#ff79c6>data</span>:
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_SECRETS_DB_KEY_BASE</span>: __YOUR_GITLAB_SECRETS_DB_KEY_BASE__
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_SECRETS_SECRET_KEY_BASE</span>: __YOUR_GITLAB_SECRETS_SECRET_KEY_BASE__
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_SECRETS_OTP_KEY_BASE</span>: __YOUR_GITLAB_SECRETS_OTP_KEY_BASE__
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>DB_PASS</span>: __YOUR_DB_PASS__
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>SMTP_PASS</span>: __YOUR_SMTP_PASS__
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>GITLAB_ROOT_PASSWORD</span>: __YOUR_GITLAB_ROOT_PASSWORD__
+</span></span><span style=display:flex><span><span style=color:#ff79c6>kind</span>: Secret
+</span></span><span style=display:flex><span><span style=color:#ff79c6>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>app</span>: gitlab
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>name</span>: gitlab-secret
+</span></span><span style=display:flex><span><span style=color:#ff79c6>type</span>: Opaque
+</span></span></code></pre></div><h3 id=statefulset>StatefulSet</h3><p>This <code>StatefulSet</code> contains the image used and what is not often used <code>envFrom</code>. <code>envFrom</code> uses a list of &ldquo;references&rdquo; to ConfigMaps and Secrets and puts them as environment variables into the Pod.
+Using <code>envFrom</code> has one disadvantage, when updating a ConfigMap or Secret referenced, the Pod doesn&rsquo;t get &ldquo;updated&rdquo;/recreated.
+Depending on how you look at rolling out software every change to a ConfigMap and Secret can be considered a version change aka updating the object to trigger update of the Pods.</p><p>You need to replace <code>__STORAGE_CLASS__</code> with the available StorageClass in your Kubernetes cluster.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ff79c6>apiVersion</span>: apps/v1beta1
+</span></span><span style=display:flex><span><span style=color:#ff79c6>kind</span>: StatefulSet
+</span></span><span style=display:flex><span><span style=color:#ff79c6>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>app</span>: gitlab
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>name</span>: gitlab
+</span></span><span style=display:flex><span><span style=color:#ff79c6>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>serviceName</span>: gitlab
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>replicas</span>: <span style=color:#bd93f9>1</span>
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>volumeClaimTemplates</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ff79c6>metadata</span>:
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>name</span>: gitlab-persistent-storage
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>spec</span>:
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>accessModes</span>: [ <span style=color:#f1fa8c>&#34;ReadWriteOnce&#34;</span> ]
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>storageClassName</span>: __STORAGE_CLASS__
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>resources</span>:
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>requests</span>:
+</span></span><span style=display:flex><span>          <span style=color:#ff79c6>storage</span>: 50Gi
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>template</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>metadata</span>:
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>labels</span>:
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>app</span>: gitlab
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>spec</span>:
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>containers</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ff79c6>name</span>: gitlab
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>image</span>: sameersbn/gitlab:10.1.1
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>imagePullPolicy</span>: Always
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>envFrom</span>:
+</span></span><span style=display:flex><span>          - <span style=color:#ff79c6>configMapRef</span>:
+</span></span><span style=display:flex><span>              <span style=color:#ff79c6>name</span>: gitlab-cm
+</span></span><span style=display:flex><span>          - <span style=color:#ff79c6>secretRef</span>:
+</span></span><span style=display:flex><span>              <span style=color:#ff79c6>name</span>: gitlab-secret
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>ports</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#ff79c6>containerPort</span>: <span style=color:#bd93f9>22</span>
+</span></span><span style=display:flex><span>          <span style=color:#ff79c6>name</span>: ssh
+</span></span><span style=display:flex><span>          <span style=color:#ff79c6>protocol</span>: TCP
+</span></span><span style=display:flex><span>        - <span style=color:#ff79c6>containerPort</span>: <span style=color:#bd93f9>80</span>
+</span></span><span style=display:flex><span>          <span style=color:#ff79c6>name</span>: http
+</span></span><span style=display:flex><span>          <span style=color:#ff79c6>protocol</span>: TCP
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>resources</span>:
+</span></span><span style=display:flex><span>          <span style=color:#ff79c6>limits</span>:
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>cpu</span>: <span style=color:#f1fa8c>&#34;2&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>memory</span>: 4Gi
+</span></span><span style=display:flex><span>          <span style=color:#ff79c6>requests</span>:
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>cpu</span>: <span style=color:#f1fa8c>&#34;500m&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ff79c6>memory</span>: <span style=color:#f1fa8c>&#34;1Gi&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>volumeMounts</span>:
+</span></span><span style=display:flex><span>        - <span style=color:#ff79c6>name</span>: gitlab-persistent-storage
+</span></span><span style=display:flex><span>          <span style=color:#ff79c6>mountPath</span>: /home/git/data
+</span></span></code></pre></div><h3 id=service>Service</h3><p>This Service is for the Ingress to be able to reach the GitLab.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ff79c6>apiVersion</span>: v1
+</span></span><span style=display:flex><span><span style=color:#ff79c6>kind</span>: Service
+</span></span><span style=display:flex><span><span style=color:#ff79c6>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>labels</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>app</span>: gitlab
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>name</span>: gitlab
+</span></span><span style=display:flex><span><span style=color:#ff79c6>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>ports</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ff79c6>name</span>: ssh
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>port</span>: <span style=color:#bd93f9>22</span>
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>protocol</span>: TCP
+</span></span><span style=display:flex><span>  - <span style=color:#ff79c6>name</span>: http
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>port</span>: <span style=color:#bd93f9>80</span>
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>protocol</span>: TCP
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>selector</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>app</span>: gitlab
+</span></span></code></pre></div><h3 id=ingress>Ingress</h3><p>To be able to reach the GitLab from outside the cluster over your Ingress controller of choice.
+The Ingress requires the Service created in <a href=#Service>Service</a>.
+You need to replace <code>__INGRESS_CLASS__</code> with your in cluster configured Ingress controller.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#ff79c6>apiVersion</span>: extensions/v1beta1
+</span></span><span style=display:flex><span><span style=color:#ff79c6>kind</span>: Ingress
+</span></span><span style=display:flex><span><span style=color:#ff79c6>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>name</span>: gitlab-examplecom
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>annotations</span>:
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>kubernetes.io/ingress.class</span>: __INGRESS_CLASS__
+</span></span><span style=display:flex><span><span style=color:#ff79c6>spec</span>:
+</span></span><span style=display:flex><span>  <span style=color:#ff79c6>rules</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ff79c6>host</span>: gitlab.example.com
+</span></span><span style=display:flex><span>    <span style=color:#ff79c6>http</span>:
+</span></span><span style=display:flex><span>      <span style=color:#ff79c6>paths</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ff79c6>path</span>: /
+</span></span><span style=display:flex><span>        <span style=color:#ff79c6>backend</span>:
+</span></span><span style=display:flex><span>          <span style=color:#ff79c6>serviceName</span>: gitlab
+</span></span><span style=display:flex><span>          <span style=color:#ff79c6>servicePort</span>: <span style=color:#bd93f9>80</span>
+</span></span></code></pre></div><h2 id=step-3---create-the-manifests>Step 3 - Create the manifests</h2><p>You can either a) save all manifests in one file, but then separated by <code>---</code> or b) per manifest on file.
+To create/run the mnaifests on Kubernetes, you can now go ahead an run:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-console data-lang=console><span style=display:flex><span><span style=color:#44475a>kubectl create -f FILE_NAME
+</span></span></span></code></pre></div><p>Where <code>FILE_NAME</code> is the name of the file containing the mnaifest(s).
+If the command I suggest you take a look at the line which <code>kubectl</code> told you the error is.</p><h2 id=step-4---login-to-your-new-gitlab>Step 4 - Login to your new GitLab</h2><p>If everything was successfull, you should be able to see your GitLab instance in,
+depending on the server network bandwith and GitLab database setup speed, about 10-15 minutes.</p><p>You should then be able to login to your GitLab over the domain name you used in the <a href=#Ingress>Ingress manifest</a>.
+With the example values above the address would be <code>https://gitlab.example.com</code>.</p><p>The login information for the first &ldquo;root&rdquo; user is:</p><ul><li>Username: <code>root</code></li><li>Password: <code>base64</code> decoded value chosen in <a href=#Secret>Secret - GITLAB_ROOT_PASSWORD</a></li></ul><h2 id=summary>Summary</h2><p>I hope this gives a good idea on how to run GitLab on Kubernetes or even simply a starting point for extending/customizing the manifests for your needs.
+Another starting point that also contains manifests for a single Postgres and Redis server, can be found here: <a href=https://github.com/sameersbn/docker-gitlab/tree/master/kubernetes>https://github.com/sameersbn/docker-gitlab/tree/master/kubernetes</a>.</p><p>Have Fun!</p></article><footer class=post-footer><ul class=post-tags><li><a href=https://edenmal.moe/tags/Continuous-Delivery><span class=tag>Continuous Delivery</span></a></li><li><a href=https://edenmal.moe/tags/GitLab><span class=tag>GitLab</span></a></li><li><a href=https://edenmal.moe/tags/Kubernetes><span class=tag>Kubernetes</span></a></li><li><a href=https://edenmal.moe/tags/Container><span class=tag>Container</span></a></li></ul><p class=post-copyright>© This page/post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, please give source if you wish to quote or reproduce.This post was published <strong>644</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.</p></footer><script src=https://utteranc.es/client.js repo=galexrt/edenmal.moe issue-term=title label=blogpost theme=icy-dark crossorigin=anonymous async></script></section><footer class=site-footer><p>© 2017-2023 Alexander Trost</p><p>Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> with customized theme <a href=https://github.com/laozhu/hugo-nuo target=_blank rel=noopener>Nuo</a>.</p></footer><link rel=stylesheet href=https://edenmal.moe/styles/icofont.min.min.css><script async src=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.min.120e30ad299b8d6548dd1fbb6ab1d45fb508bf080219df63e5ab9750b1241207.js integrity="sha256-Eg4wrSmbjWVI3R+7arHUX7UIvwgCGd9j5auXULEkEgc="></script><script type=text/x-mathjax-config>
+  MathJax.Ajax.config.path["MathJax"] = "/cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5";
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script><script type=text/x-mathjax-config>
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script><script src=https://edenmal.moe/scripts/index.min.0375b6e63e18876ff8d4ad95bf8ef081176b6b994398d5bd22f5140f45565d37.js integrity="sha256-A3W25j4Yh2/41K2Vv47wgRdra5lDmNW9IvUUD0VWXTc="></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js").then(function(){console.log("[ServiceWorker] Registered")})</script></body></html>

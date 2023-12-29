@@ -1,0 +1,147 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><title>My Sysctl Parameters | Edenmal - Sysadmin Garden of Eden</title>
+<meta name=author content="Author Name"><meta name=description content="These are the sysctl settings I deploy on most of my machines."><meta name=twitter:site content="@galexrt"><meta name=twitter:title content="My Sysctl Parameters | Edenmal - Sysadmin Garden of Eden"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://edenmal.moe/post/2019/My-sysctl-Parameters/cover.png"><meta name=twitter:description content="These are the sysctl settings I deploy on most of my machines."><meta property="og:type" content="article"><meta property="og:title" content="My Sysctl Parameters"><meta property="og:description" content="These are the sysctl settings I deploy on most of my machines."><meta property="og:url" content="https://edenmal.moe/post/2019/My-sysctl-Parameters/"><meta property="og:image" content="https://edenmal.moe/post/2019/My-sysctl-Parameters/cover.png"><meta name=generator content="Hugo 0.120.4"><link rel=canonical href=https://edenmal.moe/post/2019/My-sysctl-Parameters/><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=format-detection content="telephone=no,email=no,adress=no"><meta http-equiv=Cache-Control content="no-transform"><meta name=robots content="index,follow"><meta name=referrer content="origin-when-cross-origin"><meta name=theme-color content="#4d4ac7"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="black"><meta name=apple-mobile-web-app-title content="Edenmal"><meta name=msapplication-tooltip content="Edenmal"><meta name=msapplication-navbutton-color content="#4d4ac7"><meta name=msapplication-TileColor content="#4d4ac7"><meta name=msapplication-TileImage content="/icons/icon-144x144.png"><link rel=icon href=https://edenmal.moe/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://edenmal.moe/icons/icon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://edenmal.moe/icons/icon-32x32.png><link rel=icon sizes=192x192 href=https://edenmal.moe/icons/icon-192x192.png><link rel=apple-touch-icon href=https://edenmal.moe/icons/icon-152x152.png><link rel=manifest href=https://edenmal.moe/manifest.json><link rel=preload href=https://edenmal.moe/styles/main-rendered.min.css as=style><link rel=preload href=https://edenmal.moe/images/avatar.png as=image><link rel=preload href=https://edenmal.moe/images/grey-prism.svg as=image><style>body{background-color:#f4f3f1;background-image:url(/images/grey-prism.svg);background-repeat:repeat;background-attachment:fixed}</style><link rel=stylesheet href=https://edenmal.moe/styles/main-rendered.min.css><link rel=stylesheet href=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.min.css><link rel=stylesheet href=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.min.css><script src=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.min.819c76b4bba0f8b8c568f6e4860173f1d16e5046c01b008f4705ae823b5766e1.js integrity="sha256-gZx2tLug+LjFaPbkhgFz8dFuUEbAGwCPRwWugjtXZuE="></script><script src=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.min.2fcfc43be15566e9378af0e8247ba57fec8d4ee95c5dba15cf97e84d6c2115bc.js integrity="sha256-L8/EO+FVZuk3ivDoJHulf+yNTulcXboVz5foTWwhFbw="></script><script src=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.min.77ec5e7d7f844e9b6c2413a352b48194493a65c75d94d5cd9679a225c2da773c.js integrity="sha256-d+xefX+ETptsJBOjUrSBlEk6ZcddlNXNlnmiJcLadzw="></script><script src=https://edenmal.moe/scripts/pswp-init.min.299a530b67d8be41667aa9ed78920e272e970b0ac8ab7540ba3a7c1382b52de2.js integrity="sha256-KZpTC2fYvkFmeqnteJIOJy6XCwrIq3VAujp8E4K1LeI="></script></head><body><div class=suspension><a role=button aria-label="Go to top" title="Go to top" class="to-top is-hide"><span class=icofont-caret-up aria-hidden=true></span></a>
+<a role=button aria-label="Print page" title="Print page" class=print-page onclick=window.print()><span class=icofont-print aria-hidden=true></span></a></div><header class=site-header><a class=avatara href=https://edenmal.moe/><img class=avatar src=https://edenmal.moe/images/avatar.png alt=Avatar></a><h2 class=title><a href=https://edenmal.moe/>Edenmal</a></h2><p class=subtitle>Sysadmin Garden of Eden</p><button class=menu-toggle type=button aria-label="Main Menu" aria-expanded=false tab-index=0>
+<span class=icofont-navigation-menu aria-hidden=true></span></button><nav class="site-menu collapsed"><h2 class=offscreen>Main Menu</h2><ul class=menu-list><li class="menu-item
+is-active"><a href=https://edenmal.moe/>Home</a></li><li class=menu-item><a href=https://edenmal.moe/about/>About</a></li><li class=menu-item><a href=https://edenmal.moe/tags/>Tags</a></li><li class=menu-item><a href=https://edenmal.moe/events/>Events</a></li><li class=menu-item><a href=https://edenmal.moe/site-notice/>Impressum</a></li></ul></nav><nav class="social-menu collapsed"><h2 class=offscreen>Social Networks</h2><ul class=social-list><li class=social-item><a href=mailto:me@galexrt.moe title=Email aria-label=Email><span class=icofont-envelope aria-hidden=true></span></a></li><li class=social-item><a href=https://galexrt.moe/ rel=me title=Homepage aria-label=Homepage><span class=icofont-page aria-hidden=true></span></a></li><li class=social-item><a href=//github.com/galexrt rel=me title=GitHub aria-label=GitHub><span class=icofont-github aria-hidden=true></span></a></li><li class=social-item><a href=//twitter.com/galexrt rel=me title=Twitter aria-label=Twitter><span class=icofont-twitter aria-hidden=true></span></a></li><li class=social-item><a href=//www.linkedin.com/in/alexander-trost rel=me title=LinkedIn aria-label=LinkedIn><span class=icofont-linkedin aria-hidden=true></span></a></li><li class=social-item><a href=//www.xing.com/profile/Alexander_Trost18 rel=me title=XING aria-label=XING><span class=icofont-xing aria-hidden=true></span></a></li><li class=social-item><a rel=alternate type=application/rss+xml href=https://edenmal.moe/index.xml title=RSS aria-label=RSS><span class=icofont-rss aria-hidden=true></span></a></li></ul></nav></header><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><section class="main post-detail"><header class=post-header><h1 class=post-title>My Sysctl Parameters</h1><p class=post-meta>Author Author Name · Read Time 7 minutes · Created Mon Feb 18 08:15:20 2019 · Updated Fri Mar 25 21:33:36 2022</p></header><article class=post-content><div class=fullwidthimg><figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject><a href=https://edenmal.moe/post/2019/My-sysctl-Parameters/cover.png itemprop=contentUrl><img itemprop=thumbnail src=https://edenmal.moe/post/2019/My-sysctl-Parameters/cover.png width=850px></a></figure></div><p>These are the sysctl settings I deploy on most of my machines.
+The &ldquo;machines&rdquo; I am speaking of here, are &ldquo;always&rdquo; assumed to have at least the following &ldquo;hardware&rdquo; (it shouldn&rsquo;t really matter if it is actual metal or virtual machine):</p><ul><li>CPU: Quad or more Core</li><li>RAM: 32GB or more memory</li><li>Network: 1Gbit/s</li></ul><blockquote><p><strong>NOTE</strong></p><p>For &ldquo;thiccer wires&rdquo;, one does simply increase the <code>net.*mem</code> parameters.</p><p><strong>NOTE</strong></p><p>I&rsquo;m using parts of these paramters for machines smaller than the given &ldquo;specs&rdquo; too, but then modified a bit accordingly.</p></blockquote><p>If you have comments and/or tips about the parameters, feel free to comment them below.</p><p>I will add description and/or reasoning for some of the sysctl parameter &ldquo;groups&rdquo; over time below the whole list.</p><details><summary>Full list of my sysctl parameters, ready for copy'n'paste - <b>Click to expand</b></summary>```ini
+fs.aio_max_nr = 1048576
+fs.file_max = 2097152
+fs.inotify.max_user_instances = 5120
+fs.inotify.max_user_watches = 1572864
+fs.nr_open = 3145728
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
+fs.suid_dumpable = 0
+kernel.core_uses_pid = 1
+kernel.dmesg_restrict = 1
+kernel.exec-shield = 1
+kernel.kptr_restrict = 1
+kernel.yama.ptrace_scope = 2
+kernel.panic = 10
+kernel.panic_on_oops = 1
+kernel.pid_max = 4194303
+kernel.randomize_va_space = 2
+kernel.sched_autogroup_enabled = 0
+kernel.sched_migration_cost = 5000000
+kernel.sysrq = 0
+net.core.default_qdisc = fq
+net.core.netdev_budget = 600
+net.core.netdev_max_backlog = 65536
+net.core.optmem_max = 2048000
+net.core.rmem_max = 2048000
+net.core.somaxconn = 65536
+net.core.wmem_max = 2048000
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.all.bootp_relay = 0
+net.ipv4.conf.all.forwarding = 1
+net.ipv4.conf.all.igmpv2_unsolicited_report_interval = 10000
+net.ipv4.conf.all.igmpv3_unsolicited_report_interval = 1000
+net.ipv4.conf.all.ignore_routes_with_linkdown = 0
+net.ipv4.conf.all.log_martians = 1
+net.ipv4.conf.all.proxy_arp = 0
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.all.secure_redirects = 1
+net.ipv4.conf.all.send_redirects = 0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.conf.default.forwarding = 1
+net.ipv4.conf.default.log_martians = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.default.secure_redirects = 1
+net.ipv4.conf.default.send_redirects = 0
+net.ipv4.conf.lo.accept_source_route = 1
+net.ipv4.fwmark_reflect = 0
+net.ipv4.icmp_echo_ignore_all = 0
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+net.ipv4.icmp_ignore_bogus_error_responses = 1
+net.ipv4.icmp_msgs_burst = 50
+net.ipv4.icmp_msgs_per_sec = 1000
+net.ipv4.ip_forward = 1
+net.ipv4.ipfrag_secret_interval = 600
+net.ipv4.ip_local_port_range = 1024 65535
+net.ipv4.neigh.default.gc_thresh1 = 4048
+net.ipv4.neigh.default.gc_thresh2 = 6144
+net.ipv4.neigh.default.gc_thresh3 = 8192
+net.ipv4.netfilter.nf_conntrack_generic_timeout = 300
+net.ipv4.netfilter.nf_conntrack_tcp_timeout_time_wait = 60
+net.ipv4.tcp_congestion_control = bbr
+net.ipv4.tcp_fin_timeout = 10
+net.ipv4.tcp_keepalive_intvl = 25
+net.ipv4.tcp_keepalive_probes = 5
+net.ipv4.tcp_keepalive_time = 420
+net.ipv4.tcp_max_syn_backlog = 4096
+net.ipv4.tcp_max_tw_buckets = 160000
+net.ipv4.tcp_moderate_rcvbuf = 1
+net.ipv4.tcp_no_metrics_save = 1
+net.ipv4.tcp_notsent_lowat = 16384
+net.ipv4.tcp_rfc1337 = 1
+net.ipv4.tcp_rmem = 4096 87380 8388608
+net.ipv4.tcp_sack = 1
+net.ipv4.tcp_slow_start_after_idle = 0
+net.ipv4.tcp_synack_retries = 3
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_syn_retries = 2
+net.ipv4.tcp_timestamps = 1
+net.ipv4.tcp_tw_recycle = 0
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_window_scaling = 1
+net.ipv4.tcp_wmem = 4096 87380 8388608
+net.ipv4.udp_rmem_min = 8192
+net.ipv4.udp_wmem_min = 8192
+net.ipv4.vs.conntrack = 1
+net.ipv4.vs.conn_reuse_mode = 1
+net.ipv4.vs.expire_nodest_conn = 1
+net.ipv4.vs.sloppy_tcp = 1
+net.ipv6.conf.all.accept_ra = 0
+net.ipv6.conf.all.accept_ra_defrtr = 0
+net.ipv6.conf.all.accept_ra_pinfo = 0
+net.ipv6.conf.all.accept_redirects = 0
+net.ipv6.conf.all.accept_source_route = 0
+net.ipv6.conf.all.forwarding = 1
+net.ipv6.conf.default.accept_redirects = 0
+net.ipv6.conf.default.accept_source_route = 0
+net.ipv6.conf.default.autoconf = 1
+net.ipv6.conf.default.forwarding = 1
+net.ipv6.conf.default.max_addresses = 16
+net.ipv6.ip6frag_secret_interval = 600
+net.ipv6.route.max_size = 16384
+net.ipv6.xfrm6_gc_thresh = 32768
+net.netfilter.nf_conntrack_expect_max = 2048
+net.netfilter.nf_conntrack_max = 1024000
+net.netfilter.nf_conntrack_tcp_timeout_established = 600
+net.nf_conntrack_max = 1024000
+vm.overcommit_memory = 1
+vm.overcommit_ratio = 20
+vm.panic_on_oom = 0
+```</details><h2 id=fs><code>fs</code></h2><ul><li><code>fs.aio_max_nr = 1048576</code></li><li><code>fs.file_max = 2097152</code> Increase maximum file descriptors on kernel level, see <a href=https://serverfault.com/a/122682/367169>https://serverfault.com/a/122682/367169</a>. <strong>SPOILER</strong> You still need to set <code>ulimits</code> for &ldquo;normal&rdquo; users.</li><li><code>fs.inotify.max_user_instances = 5120</code></li><li><code>fs.inotify.max_user_watches = 1572864</code><ul><li>The <code>fs.inotify.max_user_*</code> values have been increased as it seems in some Kubernetes clusters there have been issues in regards to flexvolume plugin (possibly also CSI as they also place drivers on the hosts and CSI and/or kubelet are (inotify) watching for them).</li></ul></li><li><code>fs.nr_open = 3145728</code></li><li><code>fs.protected_hardlinks = 1</code></li><li><code>fs.protected_symlinks = 1</code></li><li><code>fs.suid_dumpable = 0</code> Restrict core dumps.</li></ul><h2 id=kernel><code>kernel</code></h2><ul><li><p><code>kernel.core_uses_pid = 1</code></p></li><li><p><code>kernel.dmesg_restrict = 1</code> Disables <code>dmesg</code> for containers without the needed <code>CAP_SYSLOG</code> capability and obviously with that non-root users on the host.</p></li><li><p><code>kernel.exec-shield = 1</code> Only available on RedHat Enterprise Linux OS.</p></li><li><p><code>kernel.kptr_restrict = 1</code> Only allow access to kernel symbol adresses for users with <code>CAP_SYSLOG</code> capability.</p></li><li><p><code>kernel.yama.ptrace_scope = 1</code> Restrict <code>ptrace</code> to parent processes (0 any process with same uid, 1 only parent process, 2 users with <code>CAP_SYS_PTRACE</code>, 3 noone can ptrace reboot required to allow <code>ptrace</code> again).</p></li><li><p><code>kernel.panic = 10</code> Reset the machine on kernel panic after 10 seconds.</p></li><li><p><code>kernel.panic_on_oops = 1</code> Cause a kernel panic when a kernel BUG / &ldquo;Oops&rdquo; is encountered.</p></li><li><p><code>kernel.pid_max = 4194303</code> Increase maximum PID because we are running many containers with many processes (could be set lower, but here just in case so many processes are being run and/or PIDs are &ldquo;never&rdquo; going to &ldquo;overlap&rdquo;).</p></li><li><p><code>kernel.randomize_va_space = 2</code></p></li><li><p><code>kernel.sched_autogroup_enabled = 0</code></p><blockquote><p>The migration cost should be increased, almost universally on server
+systems with many processes. This means systems like PostgreSQL or
+Apache would benefit from having higher migration costs.</p><p>- <a href=https://www.postgresql.org/message-id/50E4AAB1.9040902@optionshouse.com>PostgreSQL: Two Necessary Kernel Tweaks for Linux Systems</a>.</p></blockquote><p>We have many processes because of containers which are potentially spawned in a manner that would &ldquo;cause&rdquo; processes to be &ldquo;choked out of CPU cycles in favor of less important tasks&rdquo;, so disable it.</p></li><li><p><code>kernel.sched_migration_cost = 5000000</code></p><blockquote><p>It basically groups tasks by TTY so perceived responsiveness is improved.
+But on server systems, large daemons like PostgreSQL are going to be
+launched from the same pseudo-TTY, and be effectively choked out of CPU
+cycles in favor of less important tasks.</p><p>- <a href=https://www.postgresql.org/message-id/50E4AAB1.9040902@optionshouse.com>PostgreSQL: Two Necessary Kernel Tweaks for Linux Systems</a>.</p></blockquote><p>Many containers most of the time, depending on the workload, also mean many processes, though it is set not too high as suggested in the PostgreSQL mailing thread.</p></li><li><p><code>kernel.sysrq = 0</code> Limit</p></li></ul><h2 id=net><code>net</code></h2><h3 id=core><code>core</code></h3><ul><li><code>net.core.default_qdisc = fq</code> Good for HTTP/2, see <a href=https://blog.cloudflare.com/http-2-prioritization-with-nginx/>Cloudflare - Optimizing HTTP/2 prioritization with BBR and tcp_notsent_lowat</a>.</li><li><code>net.core.netdev_max_backlog = 65536</code></li><li><code>net.core.optmem_max = 2048000</code></li><li><code>net.core.rmem_max = 2048000</code></li><li><code>net.core.somaxconn = 65536</code></li><li><code>net.core.wmem_max = 2048000</code></li></ul><h3 id=ipv4><code>ipv4</code></h3><ul><li><code>net.ipv4.conf.all.accept_redirects = 0</code></li><li><code>net.ipv4.conf.all.accept_source_route = 0</code></li><li><code>net.ipv4.conf.all.bootp_relay = 0</code> Disable Bootstrap protocol, as it is superseded by DHCP.</li><li><code>net.ipv4.conf.all.forwarding = 1</code> Allow forwarding of traffic on &ldquo;all&rdquo; interfaces (needed for containers).</li><li><code>net.ipv4.conf.all.igmpv2_unsolicited_report_interval = 10000</code></li><li><code>net.ipv4.conf.all.igmpv3_unsolicited_report_interval = 1000</code></li><li><code>net.ipv4.conf.all.ignore_routes_with_linkdown = 0</code></li><li><code>net.ipv4.conf.all.log_martians = 1</code> Log all packets for &ldquo;all&rdquo; interfaces that are going to so called <a href=https://serverfault.com/questions/570980/what-is-the-usefulness-of-logging-of-martians-packet-e-g-net-ipv4-conf-all-lo>martians addresses</a>.</li><li><code>net.ipv4.conf.all.proxy_arp = 0</code></li><li><code>net.ipv4.conf.all.rp_filter = 1</code></li><li><code>net.ipv4.conf.all.secure_redirects = 1</code></li><li><code>net.ipv4.conf.all.send_redirects = 0</code></li><li><code>net.ipv4.conf.default.accept_redirects = 0</code></li><li><code>net.ipv4.conf.default.accept_source_route = 0</code></li><li><code>net.ipv4.conf.default.forwarding = 1</code> Allow forwarding of traffic by default for (new) interfaces (needed for containers).</li><li><code>net.ipv4.conf.default.log_martians = 1</code> Log all packets by default for (new) interfaces that are going to so called <a href=https://serverfault.com/questions/570980/what-is-the-usefulness-of-logging-of-martians-packet-e-g-net-ipv4-conf-all-lo>martians addresses</a>.</li><li><code>net.ipv4.conf.default.rp_filter = 1</code></li><li><code>net.ipv4.conf.default.secure_redirects = 1</code></li><li><code>net.ipv4.conf.default.send_redirects = 0</code></li><li><code>net.ipv4.conf.lo.accept_source_route = 1</code></li><li><code>net.ipv4.fwmark_reflect = 0</code> Don&rsquo;t set fwmark on kernel generated reply packets, see <a href=https://sysctl-explorer.net/net/ipv4/fwmark_reflect/>sysctl-explorer.net - net.ipv4.fwmark_reflect</a>.</li><li><code>net.ipv4.icmp_echo_ignore_all = 0</code></li><li><code>net.ipv4.icmp_echo_ignore_broadcasts = 1</code></li><li><code>net.ipv4.icmp_ignore_bogus_error_responses = 1</code> Ignore bogus responses (don&rsquo;t log it in the kernel logs).</li><li><code>net.ipv4.icmp_msgs_burst = 50</code></li><li><code>net.ipv4.icmp_msgs_per_sec = 1000</code></li><li><code>net.ipv4.ip_forward = 1</code></li><li><code>net.ipv4.ipfrag_secret_interval = 600</code></li><li><code>net.ipv4.ip_local_port_range = 1024 65535</code> Increase the per IP &ldquo;dynamic&rdquo; port limit (e.g., used for (S|D)NAT).</li><li><code>net.ipv4.neigh.default.gc_thresh1 = 4048</code></li><li><code>net.ipv4.neigh.default.gc_thresh2 = 6144</code></li><li><code>net.ipv4.neigh.default.gc_thresh3 = 8192</code></li><li><code>net.ipv4.netfilter.nf_conntrack_generic_timeout = 300</code></li><li><code>net.ipv4.netfilter.nf_conntrack_tcp_timeout_time_wait = 60</code></li><li><code>net.ipv4.tcp_congestion_control = bbr</code> Good for HTTP/2, see <a href=https://blog.cloudflare.com/http-2-prioritization-with-nginx/>Cloudflare - Optimizing HTTP/2 prioritization with BBR and tcp_notsent_lowat</a>.</li><li><code>net.ipv4.tcp_fin_timeout = 10</code></li><li><code>net.ipv4.tcp_keepalive_intvl = 25</code></li><li><code>net.ipv4.tcp_keepalive_probes = 5</code></li><li><code>net.ipv4.tcp_keepalive_time = 420</code></li><li><code>net.ipv4.tcp_max_syn_backlog = 4096</code></li><li><code>net.ipv4.tcp_max_tw_buckets = 160000</code></li><li><code>net.ipv4.tcp_moderate_rcvbuf = 1</code></li><li><code>net.ipv4.tcp_no_metrics_save = 1</code></li><li><code>net.ipv4.tcp_notsent_lowat = 16384</code> Good for HTTP/2, see <a href=https://blog.cloudflare.com/http-2-prioritization-with-nginx/>Cloudflare - Optimizing HTTP/2 prioritization with BBR and tcp_notsent_lowat</a>.</li><li><code>net.ipv4.tcp_rfc1337 = 1</code></li><li><code>net.ipv4.tcp_rmem = 4096 16384 8388608</code></li><li><code>net.ipv4.tcp_sack = 1</code></li><li><code>net.ipv4.tcp_slow_start_after_idle = 0</code></li><li><code>net.ipv4.tcp_synack_retries = 3</code></li><li><code>net.ipv4.tcp_syncookies = 1</code></li><li><code>net.ipv4.tcp_syn_retries = 2</code></li><li><code>net.ipv4.tcp_timestamps = 1</code></li><li><code>net.ipv4.tcp_tw_recycle = 0</code></li><li><code>net.ipv4.tcp_tw_reuse = 1</code></li><li><code>net.ipv4.tcp_window_scaling = 1</code></li><li><code>net.ipv4.tcp_wmem = 4096 16384 8388608</code></li><li><code>net.ipv4.udp_rmem_min = 8192</code></li><li><code>net.ipv4.udp_wmem_min = 8192</code></li><li><code>net.ipv4.vs.conntrack = 1</code> Enable IPVS connection tracking.</li><li><code>net.ipv4.vs.conn_reuse_mode = 1</code></li><li><code>net.ipv4.vs.expire_nodest_conn = 1</code></li><li><code>net.ipv4.vs.sloppy_tcp = 1</code></li></ul><h3 id=ipv6><code>ipv6</code></h3><ul><li><code>net.ipv6.conf.all.accept_ra = 0</code></li><li><code>net.ipv6.conf.all.accept_ra_defrtr = 0</code></li><li><code>net.ipv6.conf.all.accept_ra_pinfo = 0</code></li><li><code>net.ipv6.conf.all.accept_redirects = 0</code></li><li><code>net.ipv6.conf.all.accept_source_route = 0</code></li><li><code>net.ipv6.conf.all.forwarding = 1</code> Allow forwarding of traffic on &ldquo;all&rdquo; interfaces (needed for containers).</li><li><code>net.ipv6.conf.default.max_addresses = 16</code></li><li><code>net.ipv6.conf.default.accept_redirects = 0</code></li><li><code>net.ipv6.conf.default.accept_source_route = 0</code></li><li><code>net.ipv6.conf.default.autoconf = 1</code></li><li><code>net.ipv6.conf.default.forwarding = 1</code> Allow forwarding of traffic by default for (new) interfaces (needed for containers).</li><li><code>net.ipv6.fwmark_reflect = 0</code> Don&rsquo;t set fwmark on kernel generated reply packets, see <a href=https://sysctl-explorer.net/net/ipv4/fwmark_reflect/>sysctl-explorer.net - net.ipv4.fwmark_reflect</a>.</li><li><code>net.ipv6.ip6frag_secret_interval = 600</code></li><li><code>net.ipv6.route.max_size = 16384</code></li><li><code>net.ipv6.xfrm6_gc_thresh = 32768</code></li></ul><h3 id=netfilter-and-nf_conntrack_max><code>netfilter</code> and <code>nf_conntrack_max</code></h3><ul><li><code>net.netfilter.nf_conntrack_expect_max = 4096</code></li><li><code>net.netfilter.nf_conntrack_max = 1024000</code></li><li><code>net.netfilter.nf_conntrack_tcp_timeout_established = 600</code></li></ul><h2 id=vm><code>vm</code></h2><ul><li><code>vm.max_map_count = 262144</code> If you run Elasticsearch one requirement for the preflight checks to pass, see <a href=https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html>Elasticsearch Documentation Reference - Virtual memory</a>.</li><li><code>vm.overcommit_memory = 1</code> Enable memory overcommitment.</li><li><code>vm.overcommit_ratio = 20</code> How much percent of the total (physical) memory will be allowed to be overcommitet.</li><li><code>vm.panic_on_oom = 0</code> Don&rsquo;t panic on <strong>O</strong>ut <strong>O</strong>f <strong>M</strong>emory situation. It is fine to be out of memory because the OOM Killer will then already be going and killing processes according to their OOM score.</li><li><code>vm.swappiness = 0</code> No swap please. Kubelet does not like it and if you run out of memory and don&rsquo;t have a special use case for swap, your memory is simply sized to low.</li></ul><p>As written if you have comments and/or tips about the parameters, feel free to comment them below.</p><p>Have Fun!</p><p>(The cover photo is an edited screenshot from <a href=https://linux.die.net/>die.net Linux Documentation</a>)</p><hr><h2 id=references>References</h2><p>Over the years &ldquo;collecting&rdquo; these sysctl settings I came across several different sources, sites and posts. This section is a (late) try to collect these so others can see from where certain sysctl values come:</p><ul><li><a href=https://www.kmotoko.com/articles/linux-hardening-kernel-parameters-with-sysctl/>https://www.kmotoko.com/articles/linux-hardening-kernel-parameters-with-sysctl/</a></li><li><a href=https://www.tecmint.com/protect-hard-and-symbolic-links-in-centos-rhel/>https://www.tecmint.com/protect-hard-and-symbolic-links-in-centos-rhel/</a></li></ul></article><footer class=post-footer><ul class=post-tags><li><a href=https://edenmal.moe/tags/Linux><span class=tag>Linux</span></a></li><li><a href=https://edenmal.moe/tags/sysctl><span class=tag>Sysctl</span></a></li><li><a href=https://edenmal.moe/tags/Tuning><span class=tag>Tuning</span></a></li></ul><p class=post-copyright>© This page/post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, please give source if you wish to quote or reproduce.This post was published <strong>644</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.</p></footer><script src=https://utteranc.es/client.js repo=galexrt/edenmal.moe issue-term=title label=blogpost theme=icy-dark crossorigin=anonymous async></script></section><footer class=site-footer><p>© 2017-2023 Alexander Trost</p><p>Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> with customized theme <a href=https://github.com/laozhu/hugo-nuo target=_blank rel=noopener>Nuo</a>.</p></footer><link rel=stylesheet href=https://edenmal.moe/styles/icofont.min.min.css><script async src=https://edenmal.moe/cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.min.120e30ad299b8d6548dd1fbb6ab1d45fb508bf080219df63e5ab9750b1241207.js integrity="sha256-Eg4wrSmbjWVI3R+7arHUX7UIvwgCGd9j5auXULEkEgc="></script><script type=text/x-mathjax-config>
+  MathJax.Ajax.config.path["MathJax"] = "/cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5";
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    },
+  });
+</script><script type=text/x-mathjax-config>
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script><script src=https://edenmal.moe/scripts/index.min.0375b6e63e18876ff8d4ad95bf8ef081176b6b994398d5bd22f5140f45565d37.js integrity="sha256-A3W25j4Yh2/41K2Vv47wgRdra5lDmNW9IvUUD0VWXTc="></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js").then(function(){console.log("[ServiceWorker] Registered")})</script></body></html>
