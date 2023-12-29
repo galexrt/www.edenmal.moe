@@ -504,7 +504,7 @@ If you delete a `Pod` that is part of the `Deployment`, the `ReplicaSet` "magic"
 
 > **TASK**: [`kubernetes202`](https://github.com/galexrt/workshop-container-docker-kubernetes/tree/master/kubernetes202) - `mysql.yaml`
 
-```yaml {hl_lines=13-28"}
+```yaml {hl_lines=["13-28"]}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -554,7 +554,7 @@ All these fields / structures are important for the Deployment, but there are to
 
 In the above [Pod - “No, not the band”](#pod-no-not-the-band) section, a `Pod` object was shown with a section called `env:`:
 
-```yaml {hl_lines=5-7"}
+```yaml {hl_lines=["5-7"]}
 [...]
 spec:
   containers:
@@ -720,7 +720,7 @@ Without `Services` in Kubernetes you would need to talk to a `Pod` IP address di
 
 A `Service` object looks like that:
 
-```yaml {hl_lines=9-16"}
+```yaml {hl_lines=["9-16"]}
 apiVersion: v1
 kind: Service
 metadata:
@@ -869,7 +869,7 @@ Now that we have a `PersistentVolumeClaim` "claiming" storage for the MySQL Pod,
 
 MySQL Deployment example with `PersistentVolumeClaim` for the storage:
 
-```yaml {hl_lines=28-34"}
+```yaml {hl_lines=["28-34"]}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -1064,7 +1064,7 @@ So let's get right onto it and run WordPress.
 
 `wordpress` Deployment, Service and PersistentVolumeClaim YAML:
 
-```yaml {hl_lines=19-29"}
+```yaml {hl_lines=["19-29"]}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -1156,7 +1156,7 @@ The `STATUS` column for the `pod/wordpress-...` should be `Running`, if not plea
 
 Run `kubectl describe` on the Pod above and checkout the output:
 
-```yaml {hl_lines=46-52"}
+```yaml {hl_lines=["46-52"]}
 $ kubectl describe pod wordpress-56bdcbcb5b-jhpjw
 Name:               wordpress-56bdcbcb5b-jhpjw
 Namespace:          default
