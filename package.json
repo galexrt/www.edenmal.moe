@@ -13,8 +13,8 @@
   },
   "description": "Galexrt's personal site.",
   "devDependencies": {
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0"
   },
   "homepage": "https://github.com/galexrt/galexrt.github.io#readme",
